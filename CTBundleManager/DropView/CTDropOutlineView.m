@@ -12,8 +12,8 @@
 #define kDragOutlineViewTypeName @"kDragOutlineViewTypeName"
 
 @interface CTDropOutlineView()<NSOutlineViewDataSource , NSOutlineViewDelegate>
-@property (nonatomic , strong) NSScrollView* scrollView;
-@property (nonatomic , strong) NSOutlineView* outlineView;
+@property (nonatomic , strong) IBOutlet NSScrollView* scrollView;
+@property (nonatomic , strong) IBOutlet NSOutlineView* outlineView;
 @property (nonatomic , strong) NSMutableArray* dataArray;
 @property (nonatomic , strong) NSPasteboardType passtedboardType;
 @end
@@ -52,7 +52,6 @@
 
     self.dataArray = [NSMutableArray arrayWithObjects:root,root1, nil];
     [self.outlineView reloadData];
-    [self.outlineView expandItem:nil expandChildren:NO];
 }
 
  - (instancetype)initWithCoder:(NSCoder *)decoder
@@ -61,37 +60,17 @@
     if (self) {
         [self creatOutlineView];
         [self configTestData];
-        
     }
     return self;
 }
 
 -(void)creatOutlineView{
-    
-    self.outlineView = [[NSOutlineView alloc] init];
-    self.outlineView.delegate = self;
-    self.outlineView.dataSource = self;
-    self.outlineView.indentationMarkerFollowsCell = YES;
-    self.outlineView.indentationPerLevel = 16.0f;
-    self.outlineView.headerView = nil;
-    
-    NSTableColumn* column = [[NSTableColumn alloc] initWithIdentifier:@"name"];
-    [self.outlineView addTableColumn:column];
-    
-    self.scrollView = [[NSScrollView alloc] init];
-    self.scrollView.hasVerticalScroller = NO;
-    self.scrollView.focusRingType = NSFocusRingTypeNone;
-    self.scrollView.autohidesScrollers = YES;
-    self.scrollView.borderType = NSBezelBorder;
-    self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    self.scrollView.documentView = self.outlineView;
+    [[NSBundle mainBundle] loadNibNamed:@"CTDropOutlineView" owner:self topLevelObjects:nil];
+//    [self addSubview:self.outlineView];
     [self addSubview:self.scrollView];
-    
     [self configScrollViewConstraint];
 
-    
-    [self.outlineView registerNib:[[NSNib alloc] initWithNibNamed:@"CTDropCell" bundle:[NSBundle mainBundle]] forIdentifier:column.identifier];
+
     self.passtedboardType = kDragOutlineViewTypeName;
     [self.outlineView registerForDraggedTypes:@[self.passtedboardType]];
     
@@ -127,6 +106,21 @@
                                                      attribute:NSLayoutAttributeLeft
                                                     multiplier:1.0
                                                       constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.scrollView
+                                                     attribute:NSLayoutAttributeWidth
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeWidth
+                                                    multiplier:1.0
+                                                      constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.scrollView
+                                                     attribute:NSLayoutAttributeHeight
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeHeight
+                                                    multiplier:1.0
+                                                      constant:0]];
+    [self updateConstraints];
 }
 
 #pragma mark - NSOutlineViewDataSource
@@ -149,8 +143,11 @@
     }
     return item.childrens[index];
 }
--(BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
+-(BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(CTNode *)item
 {
+    if (item) {
+        return item.childrens.count > 0;
+    }
     return YES;
 }
 

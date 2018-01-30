@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -707,12 +707,12 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                    <view key="view" wantsLayer="YES" misplaced="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="723" height="705"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="8GN-Fc-NyA">
-                                <rect key="frame" x="30" y="146" width="663" height="529"/>
+                                <rect key="frame" x="30" y="147" width="663" height="529"/>
                                 <subviews>
                                     <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bg9-bP-GS5">
                                         <rect key="frame" x="182" y="479" width="300" height="30"/>
@@ -735,10 +735,10 @@
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="FdI-hC-hn1" customClass="CTDropOutlineView">
                                                 <rect key="frame" x="10" y="10" width="158" height="389"/>
                                             </customView>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="9dr-R0-9SU">
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="9dr-R0-9SU" customClass="CTDropOutlineView">
                                                 <rect key="frame" x="238" y="10" width="158" height="389"/>
                                             </customView>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="pqd-0V-ArU">
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="pqd-0V-ArU" customClass="CTDropOutlineView">
                                                 <rect key="frame" x="465" y="10" width="158" height="389"/>
                                             </customView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZgO-Tv-JLb">
@@ -759,6 +759,9 @@
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KiE-UI-gfN">
                                                 <rect key="frame" x="8" y="413" width="162" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="17" id="Rzm-7N-pd3"/>
+                                                </constraints>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title=" 不参与编译" id="9Mg-Pc-ER1">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -798,6 +801,7 @@
                                 <constraints>
                                     <constraint firstItem="bg9-bP-GS5" firstAttribute="top" secondItem="8GN-Fc-NyA" secondAttribute="top" constant="20" id="1YH-jQ-jQH"/>
                                     <constraint firstAttribute="bottom" secondItem="zcr-zb-1tX" secondAttribute="bottom" constant="15" id="3cq-eQ-xPA"/>
+                                    <constraint firstAttribute="height" constant="529" id="Gk1-Yw-CEU"/>
                                     <constraint firstItem="zcr-zb-1tX" firstAttribute="leading" secondItem="8GN-Fc-NyA" secondAttribute="leading" constant="15" id="Mvh-cd-skS"/>
                                     <constraint firstAttribute="trailing" secondItem="zcr-zb-1tX" secondAttribute="trailing" constant="15" id="Uyb-m5-DdK"/>
                                     <constraint firstItem="bg9-bP-GS5" firstAttribute="centerX" secondItem="8GN-Fc-NyA" secondAttribute="centerX" id="mwE-LA-MGY"/>
@@ -819,10 +823,10 @@
                                 </connections>
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="vaL-bc-utJ">
-                                <rect key="frame" x="30" y="40" width="663" height="86"/>
+                                <rect key="frame" x="30" y="40" width="663" height="87"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qiP-WM-HXf">
-                                        <rect key="frame" x="436" y="25" width="83" height="32"/>
+                                        <rect key="frame" x="436" y="26" width="83" height="32"/>
                                         <buttonCell key="cell" type="push" title="update" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aa4-ij-iN6">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -832,7 +836,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ozh-DF-feg">
-                                        <rect key="frame" x="144" y="25" width="76" height="32"/>
+                                        <rect key="frame" x="144" y="26" width="76" height="32"/>
                                         <buttonCell key="cell" type="push" title="install" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o6x-dQ-m5l">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>

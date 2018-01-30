@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20D7F2402020AB9900C2B8D0 /* CTDropOutlineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20D7F23F2020AB9900C2B8D0 /* CTDropOutlineView.xib */; };
 		F5E40B8F201F1FA400F49EE2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E40B8E201F1FA400F49EE2 /* AppDelegate.m */; };
 		F5E40B92201F1FA400F49EE2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E40B91201F1FA400F49EE2 /* ViewController.m */; };
 		F5E40B94201F1FA400F49EE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E40B93201F1FA400F49EE2 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20D7F23F2020AB9900C2B8D0 /* CTDropOutlineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CTDropOutlineView.xib; sourceTree = "<group>"; };
 		F5E40B8A201F1FA400F49EE2 /* CTBundleManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTBundleManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E40B8D201F1FA400F49EE2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F5E40B8E201F1FA400F49EE2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				F5E40BA42020377C00F49EE2 /* CTDropOutlineView.h */,
 				F5E40BA52020377C00F49EE2 /* CTDropOutlineView.m */,
+				20D7F23F2020AB9900C2B8D0 /* CTDropOutlineView.xib */,
 				F5E40BAC20205C6B00F49EE2 /* CTDropCell.h */,
 				F5E40BAD20205C6B00F49EE2 /* CTDropCell.m */,
 				F5E40BB320207ACB00F49EE2 /* CTDropCell.xib */,
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E40B94201F1FA400F49EE2 /* Assets.xcassets in Resources */,
+				20D7F2402020AB9900C2B8D0 /* CTDropOutlineView.xib in Resources */,
 				F5E40B97201F1FA400F49EE2 /* Main.storyboard in Resources */,
 				F5E40BB420207ACB00F49EE2 /* CTDropCell.xib in Resources */,
 			);
@@ -311,6 +315,7 @@
 				DEVELOPMENT_TEAM = S6JRCXC6CG;
 				INFOPLIST_FILE = CTBundleManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ctrip.CTBundleManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -326,6 +331,7 @@
 				DEVELOPMENT_TEAM = S6JRCXC6CG;
 				INFOPLIST_FILE = CTBundleManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ctrip.CTBundleManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
