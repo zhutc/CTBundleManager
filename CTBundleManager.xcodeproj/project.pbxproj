@@ -12,6 +12,10 @@
 		F5E40B94201F1FA400F49EE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E40B93201F1FA400F49EE2 /* Assets.xcassets */; };
 		F5E40B97201F1FA400F49EE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E40B95201F1FA400F49EE2 /* Main.storyboard */; };
 		F5E40B9A201F1FA400F49EE2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E40B99201F1FA400F49EE2 /* main.m */; };
+		F5E40BA62020377C00F49EE2 /* CTDropOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E40BA52020377C00F49EE2 /* CTDropOutlineView.m */; };
+		F5E40BAB20203B8000F49EE2 /* CTNode.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E40BAA20203B8000F49EE2 /* CTNode.m */; };
+		F5E40BAE20205C6B00F49EE2 /* CTDropCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E40BAD20205C6B00F49EE2 /* CTDropCell.m */; };
+		F5E40BB420207ACB00F49EE2 /* CTDropCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E40BB320207ACB00F49EE2 /* CTDropCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,13 @@
 		F5E40B98201F1FA400F49EE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5E40B99201F1FA400F49EE2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F5E40B9B201F1FA400F49EE2 /* CTBundleManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CTBundleManager.entitlements; sourceTree = "<group>"; };
+		F5E40BA42020377C00F49EE2 /* CTDropOutlineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTDropOutlineView.h; sourceTree = "<group>"; };
+		F5E40BA52020377C00F49EE2 /* CTDropOutlineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTDropOutlineView.m; sourceTree = "<group>"; };
+		F5E40BA920203B8000F49EE2 /* CTNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTNode.h; sourceTree = "<group>"; };
+		F5E40BAA20203B8000F49EE2 /* CTNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTNode.m; sourceTree = "<group>"; };
+		F5E40BAC20205C6B00F49EE2 /* CTDropCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTDropCell.h; sourceTree = "<group>"; };
+		F5E40BAD20205C6B00F49EE2 /* CTDropCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTDropCell.m; sourceTree = "<group>"; };
+		F5E40BB320207ACB00F49EE2 /* CTDropCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CTDropCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +68,8 @@
 		F5E40B8C201F1FA400F49EE2 /* CTBundleManager */ = {
 			isa = PBXGroup;
 			children = (
+				F5E40BA720203AAE00F49EE2 /* CTModel */,
+				F5E40BA32020373E00F49EE2 /* DropView */,
 				F5E40B8D201F1FA400F49EE2 /* AppDelegate.h */,
 				F5E40B8E201F1FA400F49EE2 /* AppDelegate.m */,
 				F5E40B90201F1FA400F49EE2 /* ViewController.h */,
@@ -68,6 +81,27 @@
 				F5E40B9B201F1FA400F49EE2 /* CTBundleManager.entitlements */,
 			);
 			path = CTBundleManager;
+			sourceTree = "<group>";
+		};
+		F5E40BA32020373E00F49EE2 /* DropView */ = {
+			isa = PBXGroup;
+			children = (
+				F5E40BA42020377C00F49EE2 /* CTDropOutlineView.h */,
+				F5E40BA52020377C00F49EE2 /* CTDropOutlineView.m */,
+				F5E40BAC20205C6B00F49EE2 /* CTDropCell.h */,
+				F5E40BAD20205C6B00F49EE2 /* CTDropCell.m */,
+				F5E40BB320207ACB00F49EE2 /* CTDropCell.xib */,
+			);
+			path = DropView;
+			sourceTree = "<group>";
+		};
+		F5E40BA720203AAE00F49EE2 /* CTModel */ = {
+			isa = PBXGroup;
+			children = (
+				F5E40BA920203B8000F49EE2 /* CTNode.h */,
+				F5E40BAA20203B8000F49EE2 /* CTNode.m */,
+			);
+			path = CTModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +164,7 @@
 			files = (
 				F5E40B94201F1FA400F49EE2 /* Assets.xcassets in Resources */,
 				F5E40B97201F1FA400F49EE2 /* Main.storyboard in Resources */,
+				F5E40BB420207ACB00F49EE2 /* CTDropCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +176,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E40B92201F1FA400F49EE2 /* ViewController.m in Sources */,
+				F5E40BA62020377C00F49EE2 /* CTDropOutlineView.m in Sources */,
 				F5E40B9A201F1FA400F49EE2 /* main.m in Sources */,
+				F5E40BAE20205C6B00F49EE2 /* CTDropCell.m in Sources */,
 				F5E40B8F201F1FA400F49EE2 /* AppDelegate.m in Sources */,
+				F5E40BAB20203B8000F49EE2 /* CTNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
