@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CTNode : NSObject
+@interface CTNode : NSObject<NSCoding>
 @property (nonatomic , copy) NSString* name;
 @property (nonatomic , weak) CTNode* parent; //super node
 @property (nonatomic , strong) NSMutableArray* childrens; // children node

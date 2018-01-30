@@ -19,14 +19,55 @@
 }
 -(void)addNode:(CTNode *)node{
     if (nil == node || NO == [node isKindOfClass:[CTNode class]] || [self.childrens containsObject:node] ) return;
+    
+    for (CTNode* nd in self.childrens) {
+        if ([nd isEqual:node]) {
+            return;
+        }
+    }
     node.parent = self;
     [self.childrens addObject:node];
     
 }
 -(void)removeNode:(CTNode *)node
 {
-    if (nil == node || NO == [node isKindOfClass:[CTNode class]] || NO == [self.childrens containsObject:node]) return;
-    node.parent = nil;
-    [self.childrens removeObject:node];
+    if (nil == node || NO == [node isKindOfClass:[CTNode class]]) return;
+    for (CTNode* nd in self.childrens) {
+        if ([nd isEqual:node]) {
+            node.parent = nil;
+            [self.childrens removeObject:nd];
+            return;
+        }
+    }
 }
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"name = %@ , parent = %@ , children = %@",self.name,self.parent.name , self.childrens];
+}
+
+/** code */
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.name forKey:@"name"];
+//    [aCoder encodeObject:self.parent forKey:@"parent"];
+    [aCoder encodeObject:self.childrens forKey:@"childrens"];
+}
+-(instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        self.name = [aDecoder decodeObjectForKey:@"name"];
+//        self.parent = [aDecoder decodeObjectForKey:@"parent"];
+        self.childrens = [aDecoder decodeObjectForKey:@"childrens"];
+    }
+    return self;
+}
+-(BOOL)isEqual:(CTNode *)object
+{
+    if ([object isKindOfClass:[CTNode class]]) {
+        return [object.name isEqual:self.name] && (self.childrens.count == object.childrens.count) ;
+    }
+    return [super isEqual:object];
+}
+
 @end
