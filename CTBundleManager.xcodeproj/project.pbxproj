@@ -17,6 +17,7 @@
 		F5E40BAB20203B8000F49EE2 /* CTNode.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E40BAA20203B8000F49EE2 /* CTNode.m */; };
 		F5E40BAE20205C6B00F49EE2 /* CTDropCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E40BAD20205C6B00F49EE2 /* CTDropCell.m */; };
 		F5E40BB420207ACB00F49EE2 /* CTDropCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E40BB320207ACB00F49EE2 /* CTDropCell.xib */; };
+		F5EE1BE42021CCD8001414A5 /* CTTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1BE32021CCD2001414A5 /* CTTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		F5E40BAC20205C6B00F49EE2 /* CTDropCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTDropCell.h; sourceTree = "<group>"; };
 		F5E40BAD20205C6B00F49EE2 /* CTDropCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTDropCell.m; sourceTree = "<group>"; };
 		F5E40BB320207ACB00F49EE2 /* CTDropCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CTDropCell.xib; sourceTree = "<group>"; };
+		F5EE1BE22021CCD2001414A5 /* CTTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTTask.h; sourceTree = "<group>"; };
+		F5EE1BE32021CCD2001414A5 /* CTTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 		F5E40B8C201F1FA400F49EE2 /* CTBundleManager */ = {
 			isa = PBXGroup;
 			children = (
+				F5EE1BE12021CCD2001414A5 /* task */,
 				F5E40BA720203AAE00F49EE2 /* CTModel */,
 				F5E40BA32020373E00F49EE2 /* DropView */,
 				F5E40B8D201F1FA400F49EE2 /* AppDelegate.h */,
@@ -105,6 +109,15 @@
 				F5E40BAA20203B8000F49EE2 /* CTNode.m */,
 			);
 			path = CTModel;
+			sourceTree = "<group>";
+		};
+		F5EE1BE12021CCD2001414A5 /* task */ = {
+			isa = PBXGroup;
+			children = (
+				F5EE1BE22021CCD2001414A5 /* CTTask.h */,
+				F5EE1BE32021CCD2001414A5 /* CTTask.m */,
+			);
+			path = task;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +195,7 @@
 				F5E40B92201F1FA400F49EE2 /* ViewController.m in Sources */,
 				F5E40BA62020377C00F49EE2 /* CTDropOutlineView.m in Sources */,
 				F5E40B9A201F1FA400F49EE2 /* main.m in Sources */,
+				F5EE1BE42021CCD8001414A5 /* CTTask.m in Sources */,
 				F5E40BAE20205C6B00F49EE2 /* CTDropCell.m in Sources */,
 				F5E40B8F201F1FA400F49EE2 /* AppDelegate.m in Sources */,
 				F5E40BAB20203B8000F49EE2 /* CTNode.m in Sources */,
@@ -309,7 +323,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CTBundleManager/CTBundleManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S6JRCXC6CG;
@@ -325,7 +338,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CTBundleManager/CTBundleManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S6JRCXC6CG;

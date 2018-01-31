@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -797,12 +797,24 @@
                                             <constraint firstItem="ZgO-Tv-JLb" firstAttribute="height" secondItem="KiE-UI-gfN" secondAttribute="height" id="zeo-HI-sPE"/>
                                         </constraints>
                                     </customView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kcI-zU-JLv">
+                                        <rect key="frame" x="9" y="477" width="67" height="32"/>
+                                        <buttonCell key="cell" type="push" title="配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="l3j-nn-TeE">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="addSpecAction:" target="XfG-lQ-9wD" id="Vra-1N-iPW"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="bg9-bP-GS5" firstAttribute="top" secondItem="8GN-Fc-NyA" secondAttribute="top" constant="20" id="1YH-jQ-jQH"/>
+                                    <constraint firstItem="zcr-zb-1tX" firstAttribute="leading" secondItem="kcI-zU-JLv" secondAttribute="leading" id="2E9-wb-zFS"/>
                                     <constraint firstAttribute="bottom" secondItem="zcr-zb-1tX" secondAttribute="bottom" constant="15" id="3cq-eQ-xPA"/>
                                     <constraint firstAttribute="height" constant="529" id="Gk1-Yw-CEU"/>
                                     <constraint firstItem="zcr-zb-1tX" firstAttribute="leading" secondItem="8GN-Fc-NyA" secondAttribute="leading" constant="15" id="Mvh-cd-skS"/>
+                                    <constraint firstItem="bg9-bP-GS5" firstAttribute="centerY" secondItem="kcI-zU-JLv" secondAttribute="centerY" id="ROw-AG-8ol"/>
                                     <constraint firstAttribute="trailing" secondItem="zcr-zb-1tX" secondAttribute="trailing" constant="15" id="Uyb-m5-DdK"/>
                                     <constraint firstItem="bg9-bP-GS5" firstAttribute="centerX" secondItem="8GN-Fc-NyA" secondAttribute="centerX" id="mwE-LA-MGY"/>
                                     <constraint firstItem="zcr-zb-1tX" firstAttribute="top" secondItem="bg9-bP-GS5" secondAttribute="bottom" constant="15" id="rfo-cF-NU0"/>
