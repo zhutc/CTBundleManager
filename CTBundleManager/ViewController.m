@@ -9,10 +9,13 @@
 #import "ViewController.h"
 #import "CTDropOutlineView.h"
 #import "CTTask.h"
+#import "NSString+JSON.h"
+
 typedef NS_ENUM(NSUInteger, CTBundleManagerStatus) {
     CTBundleManagerStatusNormal = 0,
     CTBundleManagerStatusNoSpec,
     CTBundleManagerStatusRootError,
+    CTBundleManagerStatusCtripJSONError,
     CTBundleManagerStatusOK
 };
 
@@ -33,8 +36,10 @@ typedef NS_ENUM(NSUInteger, CTBundleManagerStatus) {
 @property (nonatomic , copy) NSString* rootPath;
 @property (nonatomic , copy) NSString* ctripSpecPath;
 @property (nonatomic , copy) NSString* ctripJsonPath;
+@property (nonatomic , copy) NSString* ctripJsonLockPath;/** 生成一个json.lock */
 @property (nonatomic , copy) NSString* xcodeprojPath;
 @property (nonatomic , copy) NSString* descriptionPath;
+@property (nonatomic , copy) NSString* appVersion;
 @end
 
 @implementation ViewController
@@ -43,40 +48,58 @@ typedef NS_ENUM(NSUInteger, CTBundleManagerStatus) {
     [super viewDidLoad];
     self.status = CTBundleManagerStatusNormal;
     
+    
+    self.ctripSpecPath = @"/Users/tczhu/work/CodeSource/NativeApp/IOS_2/ctrip.spec";
+    self.rootPath = @"/Users/tczhu/work/CodeSource/NativeApp/IOS_2";
+    self.specContent = [[NSString alloc] initWithContentsOfURL:[NSURL fileURLWithPath:self.ctripSpecPath]
+                                                      encoding:NSUTF8StringEncoding
+                                                         error:nil];
+    if (self.ctripSpecPath) {
+        [self readArguments:self.rootPath];
+    }
+    
 }
 #pragma mark - 解析文件
 
 -(void)readArguments:(NSString *)rootPath
 {
     NSError* error = nil;
+    NSDictionary* ctripSpecDic = [self.specContent toDictionary:error];
+    if(error || nil == ctripSpecDic){
+        self.status = CTBundleManagerStatusRootError;
+        return;
+    }
 
-    NSData* ctripSpecData = [self.specContent dataUsingEncoding:NSUTF8StringEncoding];
-    if(error || !ctripSpecData || 0 == ctripSpecData.length){
-        self.status = CTBundleManagerStatusRootError;
-        return;
-    }
-    NSDictionary* ctripSpecDic = [NSJSONSerialization JSONObjectWithData:ctripSpecData
-                                                        options:NSJSONReadingMutableLeaves
-                                                          error:&error];
-    
-    if (error || nil == ctripSpecDic) {
-        self.status = CTBundleManagerStatusRootError;
-        return;
-    }
-    
     NSLog(@"ctripSpecDic = %@" , ctripSpecDic);
     
     self.ctripJsonPath = [self.rootPath stringByAppendingPathComponent:ctripSpecDic[@"CtripJSONPath"]];
     self.xcodeprojPath = [self.rootPath stringByAppendingPathComponent:ctripSpecDic[@"xcodeproj"]];
     self.descriptionPath = [self.rootPath stringByAppendingPathComponent:ctripSpecDic[@"DescriptionPath"]];
-    
+    /* // 使用cat获取到ctripjson
     [CTTask catTaskWithArguments:@[self.ctripJsonPath]
                          handler:^(NSString *str) {
                              NSLog(@"str = %@" , str);
                          }];
+     */
 
+    NSString* ctripJsonContent = [[NSString alloc] initWithContentsOfFile:self.ctripJsonPath
+                                                                 encoding:NSUTF8StringEncoding
+                                                                    error:&error];
     
-    NSLog(@"......");
+    if(error || 0 == ctripJsonContent.length){
+        self.status = CTBundleManagerStatusCtripJSONError;
+        return;
+    }
+    
+    NSDictionary* ctripJsonDictionary = [ctripJsonContent toDictionary:error];
+    if (error || nil == ctripJsonDictionary) {
+        self.status = CTBundleManagerStatusCtripJSONError;
+        return;
+    }
+    
+    self.appVersion = ctripJsonDictionary[@"Version"];
+    self.ctripJsonLockPath = [self.ctripJsonPath stringByAppendingString:@".lock"];
+    
 }
 
 
@@ -97,6 +120,7 @@ typedef NS_ENUM(NSUInteger, CTBundleManagerStatus) {
 
 - (IBAction)addSpecAction:(id)sender
 {
+    /** 如果有权限问题，需要使用openPanel打开spec */
     NSOpenPanel* openPanel = [NSOpenPanel openPanel];
     openPanel.canChooseFiles = YES;
     openPanel.canChooseDirectories = NO;

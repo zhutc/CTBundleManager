@@ -18,6 +18,7 @@
 		F5E40BAE20205C6B00F49EE2 /* CTDropCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E40BAD20205C6B00F49EE2 /* CTDropCell.m */; };
 		F5E40BB420207ACB00F49EE2 /* CTDropCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E40BB320207ACB00F49EE2 /* CTDropCell.xib */; };
 		F5EE1BE42021CCD8001414A5 /* CTTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1BE32021CCD2001414A5 /* CTTask.m */; };
+		F5EE1BE72021D927001414A5 /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1BE62021D927001414A5 /* NSString+JSON.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		F5E40BB320207ACB00F49EE2 /* CTDropCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CTDropCell.xib; sourceTree = "<group>"; };
 		F5EE1BE22021CCD2001414A5 /* CTTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTTask.h; sourceTree = "<group>"; };
 		F5EE1BE32021CCD2001414A5 /* CTTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTTask.m; sourceTree = "<group>"; };
+		F5EE1BE52021D927001414A5 /* NSString+JSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JSON.h"; sourceTree = "<group>"; };
+		F5EE1BE62021D927001414A5 /* NSString+JSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JSON.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 		F5E40B8C201F1FA400F49EE2 /* CTBundleManager */ = {
 			isa = PBXGroup;
 			children = (
+				F5EE1BE82021D92C001414A5 /* Category */,
 				F5EE1BE12021CCD2001414A5 /* task */,
 				F5E40BA720203AAE00F49EE2 /* CTModel */,
 				F5E40BA32020373E00F49EE2 /* DropView */,
@@ -118,6 +122,15 @@
 				F5EE1BE32021CCD2001414A5 /* CTTask.m */,
 			);
 			path = task;
+			sourceTree = "<group>";
+		};
+		F5EE1BE82021D92C001414A5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F5EE1BE52021D927001414A5 /* NSString+JSON.h */,
+				F5EE1BE62021D927001414A5 /* NSString+JSON.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +212,7 @@
 				F5E40BAE20205C6B00F49EE2 /* CTDropCell.m in Sources */,
 				F5E40B8F201F1FA400F49EE2 /* AppDelegate.m in Sources */,
 				F5E40BAB20203B8000F49EE2 /* CTNode.m in Sources */,
+				F5EE1BE72021D927001414A5 /* NSString+JSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
