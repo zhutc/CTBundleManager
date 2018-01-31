@@ -49,6 +49,7 @@
 
 
 - (IBAction)installAction:(NSButton *)sender {
+    [self.manager saveCtripJSONLockFile];
 }
 
 - (IBAction)updateAction:(id)sender {

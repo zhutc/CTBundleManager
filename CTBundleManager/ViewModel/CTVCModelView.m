@@ -152,6 +152,31 @@
     return groupArray;
 }
 
+
+/**
+ 将Node更新到lock中
+ */
+-(void)saveCtripJSONLockFile
+{
+    NSMutableDictionary* contentDictionary = [NSMutableDictionary dictionary];;
+    [contentDictionary setObject:@"Version" forKey:self.appVersion];
+    [@[self.excludeArray , self.bundleArray , self.sourceArray] enumerateObjectsUsingBlock:^(NSArray*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj enumerateObjectsUsingBlock:^(CTBundleNode*  _Nonnull root, NSUInteger rootIndex, BOOL * _Nonnull stop) {
+            [root.childrens enumerateObjectsUsingBlock:^(CTBundleNode*  _Nonnull node, NSUInteger childrenIndex , BOOL * _Nonnull stop) {
+                node.disable = (idx == 0);
+                node.isLib = (idx == 1);
+                NSDictionary* nodeDic = [node toDictionary];
+                [contentDictionary setObject:nodeDic forKey:node.name];
+            }];
+        }];
+    }];
+    
+    NSLog(@"contentDictionary = %@",contentDictionary);
+    //TODO: 需要修改为字符串写入
+    BOOL result = [contentDictionary writeToFile:self.ctripJsonLockPath atomically:YES];
+    NSLog(@"result = %d",result);
+}
+
 #pragma mark - Private
 -(BOOL)hasCtripJSONLockFile{
     return [[NSFileManager defaultManager] fileExistsAtPath:self.ctripJsonLockPath];

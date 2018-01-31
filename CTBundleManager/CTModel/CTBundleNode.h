@@ -16,4 +16,5 @@
 @property(nonatomic , strong) NSArray* dependency;
 
 -(instancetype)initWithDictionary:(NSDictionary*)dic;
+-(NSDictionary *)toDictionary;
 @end

@@ -36,4 +36,7 @@ typedef NS_ENUM(NSUInteger, CTBundleManagerStatus) {
 @property (nonatomic , copy) NSString* appVersion;
 
 -(void)readArguments:(NSString* )specPath;
+
+-(void)saveCtripJSONLockFile;
+
 @end

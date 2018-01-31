@@ -38,7 +38,16 @@
     }
     return self;
 }
-
+-(NSDictionary *)toDictionary
+{
+    return @{
+             @"isLib":@(self.isLib),
+             @"disable":@(self.disable),
+             @"RemoteCodePath":self.RemoteCodePath,
+             @"SourceCodeLocalPath":self.SourceCodeLocalPath,
+             @"dependency":self.dependency,
+             };
+}
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     NSLog(@"%@ key = %@",NSStringFromSelector(_cmd) , key);
