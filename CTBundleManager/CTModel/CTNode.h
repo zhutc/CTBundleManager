@@ -10,6 +10,7 @@
 
 @interface CTNode : NSObject<NSCoding>
 @property (nonatomic , copy) NSString* name;
+@property (nonatomic , copy) NSString* parentName;
 @property (nonatomic , weak) CTNode* parent; //super node
 @property (nonatomic , strong) NSMutableArray* childrens; // children node
 -(void)addNode:(CTNode *)node;

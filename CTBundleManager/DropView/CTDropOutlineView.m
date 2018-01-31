@@ -43,15 +43,16 @@ static CTNode* currentParent;
     return nil;
 }
 -(void)configTestData{
+    static int a = 0;
     CTNode* root = [[CTNode alloc] init];
     root.name = @"root";
     
     CTNode* n1 = [[CTNode alloc] init];
     CTNode* n2 = [[CTNode alloc] init];
     CTNode* n3 = [[CTNode alloc] init];
-    n1.name = @"n1";
-    n2.name = @"n2";
-    n3.name = @"n3";
+    n1.name = [NSString stringWithFormat:@"n%d",++a];
+    n2.name = [NSString stringWithFormat:@"n%d",++a];
+    n3.name = [NSString stringWithFormat:@"n%d",++a];
 
     [root addNode:n1];
     [root addNode:n2];
@@ -64,9 +65,9 @@ static CTNode* currentParent;
     CTNode* n5 = [[CTNode alloc] init];
     CTNode* n6 = [[CTNode alloc] init];
     
-    n4.name = @"n4";
-    n5.name = @"n5";
-    n6.name = @"n6";
+    n4.name = [NSString stringWithFormat:@"n%d",++a];
+    n5.name = [NSString stringWithFormat:@"n%d",++a];
+    n6.name = [NSString stringWithFormat:@"n%d",++a];
     
     [root1 addNode:n4];
     [root1 addNode:n5];
@@ -199,25 +200,46 @@ static CTNode* currentParent;
     NSData* data = [pasteboard dataForType:self.passtedboardType];
     CTNode* acceptNode = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
+    if (acceptNode && item) {
+        if (currentParent == nil && ![acceptNode.name isEqualToString:item.name]) {
+            return NO;
+        }
+        if (![item.name isEqualToString:acceptNode.parentName] && acceptNode.parentName) {
+            return NO;
+        }
+    }
     /** 处理空数据源情况 */
     if (nil == item) {
         if (nil == currentParent) {
-            if (![self containsNode:currentParent]) {
-                CTNode* topNode = [self topNodeForName:currentParent];
-                item = topNode;
+            if (![self containsNode:acceptNode]) {
+                CTNode* realNode = acceptNode ;
+                item = [[CTNode alloc] init];
+                item.name = realNode.name;
+                item.parent = realNode.parent;
+                [self.dataArray addObject:item];                
             }
         }else{
-            CTNode* realNode = currentParent ;
-            item = [[CTNode alloc] init];
-            item.name = realNode.name;
-            item.parent = realNode.parent;
-            [self.dataArray addObject:item];
+            if ([self containsNode:currentParent]) {
+                CTNode* topNode = [self topNodeForName:currentParent];
+                item = topNode;
+            }else{
+                CTNode* realNode = currentParent ;
+                item = [[CTNode alloc] init];
+                item.name = realNode.name;
+                item.parent = realNode.parent;
+                [self.dataArray addObject:item];
+            }
+           
         }
     }
+    
     
     /** 移除原始表 */
     if (currentParent/* acceptNode.parent */) {
         [currentParent removeNode:acceptNode]; //[acceptNode.parent removeNode:acceptNode];
+        if (0 == currentParent.childrens.count) {
+            [currentDropOutlineView.dataArray removeObject:currentParent];
+        }
     }else{
         [currentDropOutlineView.dataArray removeObject:acceptNode];
     }

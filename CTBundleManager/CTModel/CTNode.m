@@ -26,6 +26,7 @@
         }
     }
     node.parent = self;
+    node.parentName = self.name;
     [self.childrens addObject:node];
     
 }
@@ -35,6 +36,7 @@
     for (CTNode* nd in self.childrens) {
         if ([nd isEqual:node]) {
             node.parent = nil;
+            node.parentName = nil;
             [self.childrens removeObject:nd];
             return;
         }
@@ -49,6 +51,7 @@
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeObject:self.parentName forKey:@"parentName"];
 //    [aCoder encodeObject:self.parent forKey:@"parent"];
     [aCoder encodeObject:self.childrens forKey:@"childrens"];
 }
@@ -57,6 +60,7 @@
     self = [super init];
     if (self) {
         self.name = [aDecoder decodeObjectForKey:@"name"];
+        self.parentName = [aDecoder decodeObjectForKey:@"parentName"];
 //        self.parent = [aDecoder decodeObjectForKey:@"parent"];
         self.childrens = [aDecoder decodeObjectForKey:@"childrens"];
     }
