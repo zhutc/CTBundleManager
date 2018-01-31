@@ -9,5 +9,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface CTDropOutlineView : NSView
-
+-(void)updateDataArray:(NSMutableArray*)array;
 @end

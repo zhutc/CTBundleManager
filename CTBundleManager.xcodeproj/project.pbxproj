@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		20D7F2402020AB9900C2B8D0 /* CTDropOutlineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20D7F23F2020AB9900C2B8D0 /* CTDropOutlineView.xib */; };
+		20D7F2442021FECD00C2B8D0 /* CTVCModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D7F2432021FECD00C2B8D0 /* CTVCModelView.m */; };
+		20D7F2472022124200C2B8D0 /* CTBundleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D7F2462022124200C2B8D0 /* CTBundleNode.m */; };
 		F5E40B8F201F1FA400F49EE2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E40B8E201F1FA400F49EE2 /* AppDelegate.m */; };
 		F5E40B92201F1FA400F49EE2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E40B91201F1FA400F49EE2 /* ViewController.m */; };
 		F5E40B94201F1FA400F49EE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E40B93201F1FA400F49EE2 /* Assets.xcassets */; };
@@ -23,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		20D7F23F2020AB9900C2B8D0 /* CTDropOutlineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CTDropOutlineView.xib; sourceTree = "<group>"; };
+		20D7F2422021FECD00C2B8D0 /* CTVCModelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTVCModelView.h; sourceTree = "<group>"; };
+		20D7F2432021FECD00C2B8D0 /* CTVCModelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTVCModelView.m; sourceTree = "<group>"; };
+		20D7F2452022124200C2B8D0 /* CTBundleNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTBundleNode.h; sourceTree = "<group>"; };
+		20D7F2462022124200C2B8D0 /* CTBundleNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTBundleNode.m; sourceTree = "<group>"; };
 		F5E40B8A201F1FA400F49EE2 /* CTBundleManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTBundleManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E40B8D201F1FA400F49EE2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F5E40B8E201F1FA400F49EE2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -57,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20D7F2412021FEAC00C2B8D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20D7F2422021FECD00C2B8D0 /* CTVCModelView.h */,
+				20D7F2432021FECD00C2B8D0 /* CTVCModelView.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F5E40B81201F1FA400F49EE2 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +91,7 @@
 		F5E40B8C201F1FA400F49EE2 /* CTBundleManager */ = {
 			isa = PBXGroup;
 			children = (
+				20D7F2412021FEAC00C2B8D0 /* ViewModel */,
 				F5EE1BE82021D92C001414A5 /* Category */,
 				F5EE1BE12021CCD2001414A5 /* task */,
 				F5E40BA720203AAE00F49EE2 /* CTModel */,
@@ -111,6 +127,8 @@
 			children = (
 				F5E40BA920203B8000F49EE2 /* CTNode.h */,
 				F5E40BAA20203B8000F49EE2 /* CTNode.m */,
+				20D7F2452022124200C2B8D0 /* CTBundleNode.h */,
+				20D7F2462022124200C2B8D0 /* CTBundleNode.m */,
 			);
 			path = CTModel;
 			sourceTree = "<group>";
@@ -207,9 +225,11 @@
 			files = (
 				F5E40B92201F1FA400F49EE2 /* ViewController.m in Sources */,
 				F5E40BA62020377C00F49EE2 /* CTDropOutlineView.m in Sources */,
+				20D7F2442021FECD00C2B8D0 /* CTVCModelView.m in Sources */,
 				F5E40B9A201F1FA400F49EE2 /* main.m in Sources */,
 				F5EE1BE42021CCD8001414A5 /* CTTask.m in Sources */,
 				F5E40BAE20205C6B00F49EE2 /* CTDropCell.m in Sources */,
+				20D7F2472022124200C2B8D0 /* CTBundleNode.m in Sources */,
 				F5E40B8F201F1FA400F49EE2 /* AppDelegate.m in Sources */,
 				F5E40BAB20203B8000F49EE2 /* CTNode.m in Sources */,
 				F5EE1BE72021D927001414A5 /* NSString+JSON.m in Sources */,
