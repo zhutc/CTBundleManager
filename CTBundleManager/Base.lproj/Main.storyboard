@@ -848,7 +848,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ozh-DF-feg">
-                                        <rect key="frame" x="144" y="26" width="76" height="32"/>
+                                        <rect key="frame" x="293" y="26" width="76" height="32"/>
                                         <buttonCell key="cell" type="push" title="install" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o6x-dQ-m5l">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -857,12 +857,25 @@
                                             <action selector="installAction:" target="XfG-lQ-9wD" id="WEz-vi-Fdg"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Cj-gR-epi">
+                                        <rect key="frame" x="94" y="26" width="70" height="32"/>
+                                        <buttonCell key="cell" type="push" title="clear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RgW-d0-Pye">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clearAction:" target="XfG-lQ-9wD" id="xPx-LS-fMV"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qiP-WM-HXf" secondAttribute="trailing" constant="150" id="558-MA-EZa"/>
+                                    <constraint firstItem="Ozh-DF-feg" firstAttribute="leading" secondItem="6Cj-gR-epi" secondAttribute="trailing" constant="141" id="DUe-T2-xcS"/>
                                     <constraint firstItem="Ozh-DF-feg" firstAttribute="centerY" secondItem="vaL-bc-utJ" secondAttribute="centerY" id="HLm-CD-BKE"/>
+                                    <constraint firstItem="Ozh-DF-feg" firstAttribute="centerY" secondItem="6Cj-gR-epi" secondAttribute="centerY" id="L9t-K4-dye"/>
                                     <constraint firstItem="qiP-WM-HXf" firstAttribute="centerY" secondItem="vaL-bc-utJ" secondAttribute="centerY" id="PeQ-7A-bwq"/>
-                                    <constraint firstItem="Ozh-DF-feg" firstAttribute="leading" secondItem="vaL-bc-utJ" secondAttribute="leading" constant="150" id="kzH-dN-vIB"/>
+                                    <constraint firstItem="6Cj-gR-epi" firstAttribute="leading" secondItem="vaL-bc-utJ" secondAttribute="leading" constant="100" id="mer-9k-LDO"/>
+                                    <constraint firstItem="Ozh-DF-feg" firstAttribute="centerX" secondItem="vaL-bc-utJ" secondAttribute="centerX" id="zFH-FV-KP4"/>
                                 </constraints>
                             </customView>
                         </subviews>

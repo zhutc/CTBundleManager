@@ -46,47 +46,11 @@ static CTNode* currentParent;
     }
     return nil;
 }
-//-(void)configTestData{
-//    static int a = 0;
-//    CTNode* root = [[CTNode alloc] init];
-//    root.name = @"root";
-//
-//    CTNode* n1 = [[CTNode alloc] init];
-//    CTNode* n2 = [[CTNode alloc] init];
-//    CTNode* n3 = [[CTNode alloc] init];
-//    n1.name = [NSString stringWithFormat:@"n%d",++a];
-//    n2.name = [NSString stringWithFormat:@"n%d",++a];
-//    n3.name = [NSString stringWithFormat:@"n%d",++a];
-//
-//    [root addNode:n1];
-//    [root addNode:n2];
-//    [root addNode:n3];
-//
-//    CTNode* root1 = [[CTNode alloc] init];
-//    root1.name = @"root1";
-//
-//    CTNode* n4 = [[CTNode alloc] init];
-//    CTNode* n5 = [[CTNode alloc] init];
-//    CTNode* n6 = [[CTNode alloc] init];
-//
-//    n4.name = [NSString stringWithFormat:@"n%d",++a];
-//    n5.name = [NSString stringWithFormat:@"n%d",++a];
-//    n6.name = [NSString stringWithFormat:@"n%d",++a];
-//
-//    [root1 addNode:n4];
-//    [root1 addNode:n5];
-//    [root1 addNode:n6];
-//
-//    self.dataArray = [NSMutableArray arrayWithObjects:root,root1, nil];
-//    [self.outlineView reloadData];
-//}
-
  - (instancetype)initWithCoder:(NSCoder *)decoder
 {
     self = [super initWithCoder:decoder];
     if (self) {
         [self creatOutlineView];
-//        [self configTestData];
     }
     return self;
 }
@@ -255,7 +219,7 @@ static CTNode* currentParent;
             [item addNode:obj];
         }];
     }
-    NSLog(@"info = %@ , item = %@ index = %ld acceptNode = %@",info,item,(long)index , acceptNode);
+//    NSLog(@"info = %@ , item = %@ index = %ld acceptNode = %@",info,item,(long)index , acceptNode);
     [currentDropOutlineView.outlineView reloadData];
     currentDropOutlineView = nil;
     [outlineView reloadData];

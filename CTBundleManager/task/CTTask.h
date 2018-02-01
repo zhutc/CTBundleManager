@@ -15,5 +15,15 @@
 
 
 //获取输出的task
-+(void)catTaskWithArguments:(NSArray<NSString*> *)arugments handler:(void(^)(NSString* str))handler;
++(void)catTaskWithArguments:(NSArray<NSString*> *)arugments
+                    handler:(void(^)(NSString* str))handler;
+
+/** 执行工程配置 */
++(void)installTaskWithLaunchPath:(NSString *)launchPath
+                       arguments:(NSArray *)arguments
+                currentWorkSpace:(NSString *)workspace
+                      receiveLog:(void(^)(NSString* str))receiveLogHander
+                         handler:(void(^)(NSString* str))handler;
+
+
 @end

@@ -21,6 +21,15 @@
 		F5E40BB420207ACB00F49EE2 /* CTDropCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E40BB320207ACB00F49EE2 /* CTDropCell.xib */; };
 		F5EE1BE42021CCD8001414A5 /* CTTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1BE32021CCD2001414A5 /* CTTask.m */; };
 		F5EE1BE72021D927001414A5 /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1BE62021D927001414A5 /* NSString+JSON.m */; };
+		F5EE1BEB2022B560001414A5 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1BEA2022B560001414A5 /* NSDictionary+JSON.m */; };
+		F5EE1C862022FECB001414A5 /* CTLogPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1C852022FECB001414A5 /* CTLogPanel.m */; };
+		F5EE1C882022FF20001414A5 /* CTLogPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5EE1C872022FF20001414A5 /* CTLogPanel.xib */; };
+		F5EE1CBF2023136A001414A5 /* CTSettingCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1CBE2023136A001414A5 /* CTSettingCache.m */; };
+		F5EE1CC220231794001414A5 /* CTSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1CC120231794001414A5 /* CTSettingModel.m */; };
+		F5EE1CC520231B53001414A5 /* CTSpecPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1CC420231B53001414A5 /* CTSpecPanel.m */; };
+		F5EE1CC720231B60001414A5 /* CTSpecPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5EE1CC620231B60001414A5 /* CTSpecPanel.xib */; };
+		F5EE1CCA202324BC001414A5 /* CTSettingPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EE1CC9202324BC001414A5 /* CTSettingPanel.m */; };
+		F5EE1CCC202324C7001414A5 /* CTSettingPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5EE1CCB202324C7001414A5 /* CTSettingPanel.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +59,21 @@
 		F5EE1BE32021CCD2001414A5 /* CTTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTTask.m; sourceTree = "<group>"; };
 		F5EE1BE52021D927001414A5 /* NSString+JSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JSON.h"; sourceTree = "<group>"; };
 		F5EE1BE62021D927001414A5 /* NSString+JSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JSON.m"; sourceTree = "<group>"; };
+		F5EE1BE92022B560001414A5 /* NSDictionary+JSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
+		F5EE1BEA2022B560001414A5 /* NSDictionary+JSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSON.m"; sourceTree = "<group>"; };
+		F5EE1C842022FECB001414A5 /* CTLogPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTLogPanel.h; sourceTree = "<group>"; };
+		F5EE1C852022FECB001414A5 /* CTLogPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTLogPanel.m; sourceTree = "<group>"; };
+		F5EE1C872022FF20001414A5 /* CTLogPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CTLogPanel.xib; sourceTree = "<group>"; };
+		F5EE1CBD2023136A001414A5 /* CTSettingCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSettingCache.h; sourceTree = "<group>"; };
+		F5EE1CBE2023136A001414A5 /* CTSettingCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSettingCache.m; sourceTree = "<group>"; };
+		F5EE1CC020231794001414A5 /* CTSettingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSettingModel.h; sourceTree = "<group>"; };
+		F5EE1CC120231794001414A5 /* CTSettingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSettingModel.m; sourceTree = "<group>"; };
+		F5EE1CC320231B53001414A5 /* CTSpecPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSpecPanel.h; sourceTree = "<group>"; };
+		F5EE1CC420231B53001414A5 /* CTSpecPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSpecPanel.m; sourceTree = "<group>"; };
+		F5EE1CC620231B60001414A5 /* CTSpecPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CTSpecPanel.xib; sourceTree = "<group>"; };
+		F5EE1CC8202324BC001414A5 /* CTSettingPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSettingPanel.h; sourceTree = "<group>"; };
+		F5EE1CC9202324BC001414A5 /* CTSettingPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSettingPanel.m; sourceTree = "<group>"; };
+		F5EE1CCB202324C7001414A5 /* CTSettingPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CTSettingPanel.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +115,8 @@
 		F5E40B8C201F1FA400F49EE2 /* CTBundleManager */ = {
 			isa = PBXGroup;
 			children = (
+				F5EE1CBC20231349001414A5 /* cache */,
+				F5EE1C832022FDA4001414A5 /* Panel */,
 				20D7F2412021FEAC00C2B8D0 /* ViewModel */,
 				F5EE1BE82021D92C001414A5 /* Category */,
 				F5EE1BE12021CCD2001414A5 /* task */,
@@ -129,6 +155,8 @@
 				F5E40BAA20203B8000F49EE2 /* CTNode.m */,
 				20D7F2452022124200C2B8D0 /* CTBundleNode.h */,
 				20D7F2462022124200C2B8D0 /* CTBundleNode.m */,
+				F5EE1CC020231794001414A5 /* CTSettingModel.h */,
+				F5EE1CC120231794001414A5 /* CTSettingModel.m */,
 			);
 			path = CTModel;
 			sourceTree = "<group>";
@@ -147,8 +175,35 @@
 			children = (
 				F5EE1BE52021D927001414A5 /* NSString+JSON.h */,
 				F5EE1BE62021D927001414A5 /* NSString+JSON.m */,
+				F5EE1BE92022B560001414A5 /* NSDictionary+JSON.h */,
+				F5EE1BEA2022B560001414A5 /* NSDictionary+JSON.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		F5EE1C832022FDA4001414A5 /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				F5EE1C842022FECB001414A5 /* CTLogPanel.h */,
+				F5EE1C852022FECB001414A5 /* CTLogPanel.m */,
+				F5EE1C872022FF20001414A5 /* CTLogPanel.xib */,
+				F5EE1CC320231B53001414A5 /* CTSpecPanel.h */,
+				F5EE1CC420231B53001414A5 /* CTSpecPanel.m */,
+				F5EE1CC620231B60001414A5 /* CTSpecPanel.xib */,
+				F5EE1CC8202324BC001414A5 /* CTSettingPanel.h */,
+				F5EE1CC9202324BC001414A5 /* CTSettingPanel.m */,
+				F5EE1CCB202324C7001414A5 /* CTSettingPanel.xib */,
+			);
+			path = Panel;
+			sourceTree = "<group>";
+		};
+		F5EE1CBC20231349001414A5 /* cache */ = {
+			isa = PBXGroup;
+			children = (
+				F5EE1CBD2023136A001414A5 /* CTSettingCache.h */,
+				F5EE1CBE2023136A001414A5 /* CTSettingCache.m */,
+			);
+			path = cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E40B94201F1FA400F49EE2 /* Assets.xcassets in Resources */,
+				F5EE1CCC202324C7001414A5 /* CTSettingPanel.xib in Resources */,
+				F5EE1C882022FF20001414A5 /* CTLogPanel.xib in Resources */,
 				20D7F2402020AB9900C2B8D0 /* CTDropOutlineView.xib in Resources */,
 				F5E40B97201F1FA400F49EE2 /* Main.storyboard in Resources */,
+				F5EE1CC720231B60001414A5 /* CTSpecPanel.xib in Resources */,
 				F5E40BB420207ACB00F49EE2 /* CTDropCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,13 +281,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5EE1CCA202324BC001414A5 /* CTSettingPanel.m in Sources */,
 				F5E40B92201F1FA400F49EE2 /* ViewController.m in Sources */,
 				F5E40BA62020377C00F49EE2 /* CTDropOutlineView.m in Sources */,
+				F5EE1CBF2023136A001414A5 /* CTSettingCache.m in Sources */,
 				20D7F2442021FECD00C2B8D0 /* CTVCModelView.m in Sources */,
+				F5EE1BEB2022B560001414A5 /* NSDictionary+JSON.m in Sources */,
 				F5E40B9A201F1FA400F49EE2 /* main.m in Sources */,
 				F5EE1BE42021CCD8001414A5 /* CTTask.m in Sources */,
+				F5EE1CC220231794001414A5 /* CTSettingModel.m in Sources */,
 				F5E40BAE20205C6B00F49EE2 /* CTDropCell.m in Sources */,
+				F5EE1CC520231B53001414A5 /* CTSpecPanel.m in Sources */,
 				20D7F2472022124200C2B8D0 /* CTBundleNode.m in Sources */,
+				F5EE1C862022FECB001414A5 /* CTLogPanel.m in Sources */,
 				F5E40B8F201F1FA400F49EE2 /* AppDelegate.m in Sources */,
 				F5E40BAB20203B8000F49EE2 /* CTNode.m in Sources */,
 				F5EE1BE72021D927001414A5 /* NSString+JSON.m in Sources */,

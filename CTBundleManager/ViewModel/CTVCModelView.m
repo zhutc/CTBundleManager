@@ -9,6 +9,8 @@
 #import "CTVCModelView.h"
 #import "NSString+JSON.h"
 #import "CTBundleNode.h"
+#import "NSDictionary+JSON.h"
+
 @implementation CTVCModelView
 -(instancetype)init
 {
@@ -159,7 +161,7 @@
 -(void)saveCtripJSONLockFile
 {
     NSMutableDictionary* contentDictionary = [NSMutableDictionary dictionary];;
-    [contentDictionary setObject:@"Version" forKey:self.appVersion];
+    [contentDictionary setObject:self.appVersion forKey:@"Version"];
     [@[self.excludeArray , self.bundleArray , self.sourceArray] enumerateObjectsUsingBlock:^(NSArray*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj enumerateObjectsUsingBlock:^(CTBundleNode*  _Nonnull root, NSUInteger rootIndex, BOOL * _Nonnull stop) {
             [root.childrens enumerateObjectsUsingBlock:^(CTBundleNode*  _Nonnull node, NSUInteger childrenIndex , BOOL * _Nonnull stop) {
@@ -171,9 +173,13 @@
         }];
     }];
     
-    NSLog(@"contentDictionary = %@",contentDictionary);
-    //TODO: 需要修改为字符串写入
-    BOOL result = [contentDictionary writeToFile:self.ctripJsonLockPath atomically:YES];
+//    NSLog(@"contentDictionary = %@",contentDictionary);
+    NSError* error = nil;
+    NSString* contentDictionaryString = [contentDictionary toString:error];
+    BOOL result = [contentDictionaryString writeToFile:self.ctripJsonLockPath
+                              atomically:YES
+                                encoding:NSUTF8StringEncoding
+                                   error:&error];
     NSLog(@"result = %d",result);
 }
 
