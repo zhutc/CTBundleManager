@@ -29,15 +29,18 @@
     
     return task;
 }
-//获取输出的task
-+(void)catTaskWithArguments:(NSArray<NSString*> *)arugments handler:(void(^)(NSString* str))handler
++(NSTask*)taskWithLaunchPath:(NSString *)launchPath
+                   arguments:(NSArray *)arguments
+            currentWorkSpace:(NSString *)workspace
+               outputhandler:(void(^)(NSString* str))handler
 {
     if (!handler) {
-        return;
+        return nil;
     }
-    NSTask* task = [CTTask taskWithLaunchPath:@"/bin/cat"
-                                    arguments:arugments
-                             currentWorkSpace:[[NSBundle mainBundle] resourcePath]];
+    
+    NSTask* task = [CTTask taskWithLaunchPath:launchPath
+                                    arguments:arguments
+                             currentWorkSpace:workspace];
     [task launch];
     [task waitUntilExit];
     
@@ -45,7 +48,40 @@
     NSData* data = [outputPipe.fileHandleForReading readDataToEndOfFile];
     NSString* text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     handler(text);
+    return task;
 }
+
++(void)shTaskWithArguments:(NSArray<NSString *> *)arguments
+                   handler:(void(^)(NSString* str))handler
+{
+
+    [CTTask taskWithLaunchPath:@"/bin/sh"
+                     arguments:arguments
+              currentWorkSpace:[[NSBundle mainBundle] resourcePath]
+                 outputhandler:handler];
+
+}
+
+//获取输出的task
++(void)catTaskWithArguments:(NSArray<NSString*> *)arugments handler:(void(^)(NSString* str))handler
+{
+
+    [CTTask taskWithLaunchPath:@"/bin/cat"
+                     arguments:arugments
+              currentWorkSpace:[[NSBundle mainBundle] resourcePath]
+                 outputhandler:handler];
+
+}
+
++(void)whichTaskWithArguments:(NSArray<NSString *> *)arguments
+                      handler:(void(^)(NSString* str))handler
+{
+    [CTTask taskWithLaunchPath:@"/usr/bin/which"
+                     arguments:arguments
+              currentWorkSpace:[[NSBundle mainBundle] resourcePath]
+                 outputhandler:handler];
+}
+
 
 +(void)installTaskWithLaunchPath:(NSString *)launchPath
                        arguments:(NSArray *)arguments

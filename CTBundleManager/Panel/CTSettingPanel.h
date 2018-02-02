@@ -9,7 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface CTSettingPanel : NSPanel
-@property (weak) IBOutlet NSTextField *ctripSpecTextField;
 @property (weak) IBOutlet NSTextField *pythonTextField;
 +(CTSettingPanel *)settingPanel;
 @end

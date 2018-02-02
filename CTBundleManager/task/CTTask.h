@@ -13,12 +13,25 @@
                 arguments:(NSArray *)arguments
             currentWorkSpace:(NSString *)workspace;
 
++(NSTask*)taskWithLaunchPath:(NSString *)launchPath
+                   arguments:(NSArray *)arguments
+            currentWorkSpace:(NSString *)workspace
+               outputhandler:(void(^)(NSString* str))handler;
 
-//获取输出的task
-+(void)catTaskWithArguments:(NSArray<NSString*> *)arugments
+/**  /usr/bin/sh task */
++(void)shTaskWithArguments:(NSArray<NSString *> *)arguments
+                          handler:(void(^)(NSString* str))handler;
+
+/**  /usr/bin/cat task */
++(void)catTaskWithArguments:(NSArray<NSString*> *)arguments
                     handler:(void(^)(NSString* str))handler;
 
-/** 执行工程配置 */
+/** /usr/bin/which task */
++(void)whichTaskWithArguments:(NSArray<NSString *> *)arguments
+                   handler:(void(^)(NSString* str))handler;
+
+
+/** 执行工程配置 python pbxhelper.py */
 +(void)installTaskWithLaunchPath:(NSString *)launchPath
                        arguments:(NSArray *)arguments
                 currentWorkSpace:(NSString *)workspace

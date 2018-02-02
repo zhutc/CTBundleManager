@@ -27,6 +27,9 @@
     return nil;
 }
 -(IBAction)okAction:(id)sender{
+    if (nil == self.pythonTextField.stringValue || 0 == self.pythonTextField.stringValue.length) {
+        return;
+    }
     [self.sheetParent endSheet:self];
 }
 
