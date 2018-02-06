@@ -712,7 +712,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="8GN-Fc-NyA">
-                                <rect key="frame" x="30" y="128" width="663" height="529"/>
+                                <rect key="frame" x="30" y="99" width="663" height="529"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="zcr-zb-1tX">
                                         <rect key="frame" x="15" y="15" width="633" height="499"/>
@@ -775,10 +775,10 @@
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="vaL-bc-utJ">
-                                <rect key="frame" x="30" y="40" width="663" height="68"/>
+                                <rect key="frame" x="30" y="40" width="663" height="39"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qiP-WM-HXf">
-                                        <rect key="frame" x="403" y="16" width="203" height="32"/>
+                                        <rect key="frame" x="403" y="2" width="203" height="32"/>
                                         <buttonCell key="cell" type="push" title="更新最新Bundle和工程配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aa4-ij-iN6">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -788,7 +788,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ozh-DF-feg">
-                                        <rect key="frame" x="222" y="16" width="133" height="32"/>
+                                        <rect key="frame" x="222" y="2" width="133" height="32"/>
                                         <buttonCell key="cell" type="push" title="仅更新工程配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o6x-dQ-m5l">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -798,7 +798,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Cj-gR-epi">
-                                        <rect key="frame" x="54" y="16" width="120" height="32"/>
+                                        <rect key="frame" x="54" y="2" width="120" height="32"/>
                                         <buttonCell key="cell" type="push" title="还原工程配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RgW-d0-Pye">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -818,41 +818,53 @@
                                 </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XUT-Gk-5cg">
-                                <rect key="frame" x="28" y="667" width="569" height="19"/>
+                                <rect key="frame" x="28" y="667" width="630" height="19"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="工作目录 ：" id="gR5-Fl-dGn">
                                     <font key="font" size="15" name=".PingFangSC-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YC9-FV-P0E">
-                                <rect key="frame" x="621" y="659" width="88" height="32"/>
-                                <buttonCell key="cell" type="push" title="帮助文档" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A2M-ex-ZOj">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YC9-FV-P0E">
+                                <rect key="frame" x="680" y="663" width="25" height="25"/>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A2M-ex-ZOj">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="helpAction:" target="XfG-lQ-9wD" id="5CX-ru-4eP"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XIj-Kb-b8j">
+                                <rect key="frame" x="28" y="638" width="630" height="19"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="当前分支 : " id="Qio-8G-SIP">
+                                    <font key="font" size="15" name=".PingFangSC-Regular"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="XUT-Gk-5cg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="12A-9A-9Ks"/>
                             <constraint firstAttribute="trailing" secondItem="YC9-FV-P0E" secondAttribute="trailing" constant="20" id="AHX-gx-0tL"/>
+                            <constraint firstItem="XIj-Kb-b8j" firstAttribute="leading" secondItem="XUT-Gk-5cg" secondAttribute="leading" id="BFf-7J-NoS"/>
                             <constraint firstItem="YC9-FV-P0E" firstAttribute="centerY" secondItem="XUT-Gk-5cg" secondAttribute="centerY" id="EOP-7m-sdb"/>
                             <constraint firstItem="YC9-FV-P0E" firstAttribute="leading" secondItem="XUT-Gk-5cg" secondAttribute="trailing" constant="26" id="GkD-SH-Smd"/>
                             <constraint firstItem="8GN-Fc-NyA" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="HGQ-Op-jKw"/>
+                            <constraint firstItem="8GN-Fc-NyA" firstAttribute="top" secondItem="XIj-Kb-b8j" secondAttribute="bottom" constant="10" id="L84-zL-bKK"/>
                             <constraint firstItem="vaL-bc-utJ" firstAttribute="trailing" secondItem="8GN-Fc-NyA" secondAttribute="trailing" id="RNE-WU-kjF"/>
                             <constraint firstItem="vaL-bc-utJ" firstAttribute="leading" secondItem="8GN-Fc-NyA" secondAttribute="leading" id="RvD-G3-ITk"/>
                             <constraint firstAttribute="trailing" secondItem="8GN-Fc-NyA" secondAttribute="trailing" constant="30" id="TS9-sv-whI"/>
                             <constraint firstItem="XUT-Gk-5cg" firstAttribute="leading" secondItem="8GN-Fc-NyA" secondAttribute="leading" id="XbA-Yv-syI"/>
                             <constraint firstAttribute="bottom" secondItem="vaL-bc-utJ" secondAttribute="bottom" constant="40" id="eZB-Wa-d7W"/>
+                            <constraint firstItem="XIj-Kb-b8j" firstAttribute="top" secondItem="XUT-Gk-5cg" secondAttribute="bottom" constant="10" id="fRz-gW-J3y"/>
                             <constraint firstItem="vaL-bc-utJ" firstAttribute="top" secondItem="8GN-Fc-NyA" secondAttribute="bottom" constant="20" id="pxI-gO-iqf"/>
-                            <constraint firstItem="8GN-Fc-NyA" firstAttribute="top" secondItem="XUT-Gk-5cg" secondAttribute="bottom" constant="10" id="uYU-fj-raM"/>
                             <constraint firstItem="8GN-Fc-NyA" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" multiplier="3:4" id="vqB-sS-96p"/>
+                            <constraint firstItem="XIj-Kb-b8j" firstAttribute="trailing" secondItem="XUT-Gk-5cg" secondAttribute="trailing" id="znI-8U-Z5e"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="branchTextField" destination="XIj-Kb-b8j" id="vlV-k1-gdh"/>
                         <outlet property="bundleDropView" destination="9dr-R0-9SU" id="rRD-eI-hfj"/>
                         <outlet property="mainBackgroundView" destination="8GN-Fc-NyA" id="ivf-fu-3hF"/>
                         <outlet property="mainDrapBackgroundView" destination="zcr-zb-1tX" id="NMJ-Xw-bea"/>
@@ -862,7 +874,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103.5" y="978.5"/>
+            <point key="canvasLocation" x="99.5" y="921.5"/>
         </scene>
     </scenes>
 </document>

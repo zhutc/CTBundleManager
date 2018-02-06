@@ -26,6 +26,7 @@
 @property (weak) IBOutlet CTDropOutlineView *bundleDropView;
 @property (weak) IBOutlet CTDropOutlineView *sourceCodeDropView;
 @property (weak) IBOutlet NSTextField* workspaceTextField;
+@property (weak) IBOutlet NSTextField* branchTextField;
 
 @property (nonatomic , strong) CTVCModelView* manager;//VM
 @property (nonatomic , strong) CTSettingModel* settingModel;
@@ -47,6 +48,7 @@
 {
     [super viewWillAppear];
     [self reload];
+    [self branchTask];
     
 }
 -(void)reload{
@@ -125,7 +127,7 @@
 {
     NSString* bundlePath = [[NSBundle mainBundle] resourcePath];
     if ([self hasNoSpec]) {
-        NSString* specPath = [bundlePath stringByAppendingPathComponent:@"../../../ctrip.spec"];
+        NSString* specPath = [bundlePath stringByAppendingPathComponent:@"../../../../ctrip.spec"];
         NSString* absolutPath = specPath.stringByStandardizingPath;
         if (absolutPath && [[NSFileManager defaultManager] fileExistsAtPath:absolutPath]) {
             [CTSettingCache setObject:absolutPath forKey:kCtripSpecKey];
@@ -218,6 +220,20 @@
                               }];
 }
 
+-(void)branchTask{
+    [CTTask taskWithLaunchPath:@"/usr/bin/git"
+                     arguments:@[@"branch"]
+              currentWorkSpace:self.manager.rootPath
+                 outputhandler:^(NSString *str) {
+                     NSLog(@"str = %@ ",str);
+                     NSString* sub = [[str componentsSeparatedByString:@"*"]lastObject];
+                     NSString* branch = [[sub componentsSeparatedByString:@"\n"] firstObject];
+                     NSMutableAttributedString* attribute = [[NSMutableAttributedString alloc] initWithString:@"当前分支 : "];
+                     [attribute appendAttributedString:[[NSAttributedString alloc] initWithString:branch attributes:@{NSForegroundColorAttributeName:[NSColor redColor]}]];
+                     self.branchTextField.attributedStringValue = attribute;
+                 }];
+}
+
 -(BOOL)showLogPanel
 {
     self.tmpLogPanel = [CTLogPanel logPanel];
@@ -254,7 +270,7 @@
 -(void)showHelpAlert
 {
     [[CTTask taskWithLaunchPath:@"/usr/bin/open"
-                      arguments:@[@"http://conf.ctripcorp.com/pages/viewpage.action?pageId=87667888"]
+                      arguments:@[@"http://conf.ctripcorp.com/pages/viewpage.action?pageId=150165982"]
                currentWorkSpace:[[NSBundle mainBundle] resourcePath]] launch] ;
     
     /*

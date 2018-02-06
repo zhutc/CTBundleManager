@@ -19,6 +19,7 @@
     task.launchPath = launchPath;
     task.arguments = arguments;
     task.currentDirectoryPath = workspace;
+    task.environment = @{@"LANG":@"zh_CN.UTF-8"};
     
     NSPipe* outputPipe = [NSPipe pipe];
     [task setStandardOutput:outputPipe];
