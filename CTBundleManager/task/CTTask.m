@@ -19,8 +19,9 @@
     task.launchPath = launchPath;
     task.arguments = arguments;
     task.currentDirectoryPath = workspace;
-    task.environment = @{@"LANG":@"zh_CN.UTF-8"
-                         @"PATH"@"/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/"
+    task.environment = @{
+                         @"LANG":@"zh_CN.UTF-8",
+                         @"PATH":@"/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/"
                          };
     
     NSPipe* outputPipe = [NSPipe pipe];

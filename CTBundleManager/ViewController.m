@@ -41,7 +41,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 }
 
 -(void)viewWillAppear
@@ -127,7 +126,7 @@
 {
     NSString* bundlePath = [[NSBundle mainBundle] resourcePath];
     if ([self hasNoSpec]) {
-        NSString* specPath = [bundlePath stringByAppendingPathComponent:@"../../../../ctrip.spec"];
+        NSString* specPath = [bundlePath stringByAppendingPathComponent:@"../../../ctrip.spec"];
         NSString* absolutPath = specPath.stringByStandardizingPath;
         if (absolutPath && [[NSFileManager defaultManager] fileExistsAtPath:absolutPath]) {
             [CTSettingCache setObject:absolutPath forKey:kCtripSpecKey];

@@ -26,6 +26,7 @@
     [nib instantiateWithOwner:nil topLevelObjects:&array];
     for (id obj in array) {
         if ([obj isKindOfClass:[CTLogPanel class]]) {
+            [(NSWindow *)obj setShowsResizeIndicator:NO];
             return obj;
         }
     }

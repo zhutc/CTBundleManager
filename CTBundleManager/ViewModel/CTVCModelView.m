@@ -25,7 +25,7 @@
 -(void)readArguments:(NSString *)specPath
 {
     self.ctripSpecPath = specPath;
-    self.rootPath = [specPath stringByDeletingLastPathComponent];
+    self.rootPath = [[specPath stringByDeletingLastPathComponent] stringByDeletingLastPathComponent];
     
     NSError* error = nil;
 
