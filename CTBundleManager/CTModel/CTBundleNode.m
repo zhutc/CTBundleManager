@@ -17,11 +17,14 @@
     [aCoder encodeObject:self.dependency forKey:@"dependency"];
     [aCoder encodeBool:self.isLib forKey:@"isLib"];
     [aCoder encodeBool:self.disable forKey:@"disable"];
+    [aCoder encodeBool:self.disable forKey:@"hasResouceBundle"];
+    
 }
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        self.hasResouceBundle = [aDecoder decodeBoolForKey:@"hasResouceBundle"];
         self.isLib = [aDecoder decodeBoolForKey:@"isLib"];
         self.disable = [aDecoder decodeBoolForKey:@"disable"];
         self.RemoteCodePath = [aDecoder decodeObjectForKey:@"RemoteCodePath"];
@@ -41,6 +44,7 @@
 -(NSDictionary *)toDictionary
 {
     return @{
+             @"hasResouceBundle":@(self.hasResouceBundle),
              @"isLib":@(self.isLib),
              @"disable":@(self.disable),
              @"RemoteCodePath":self.RemoteCodePath,

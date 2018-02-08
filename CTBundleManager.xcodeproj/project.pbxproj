@@ -38,6 +38,7 @@
 		20D7F2432021FECD00C2B8D0 /* CTVCModelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTVCModelView.m; sourceTree = "<group>"; };
 		20D7F2452022124200C2B8D0 /* CTBundleNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTBundleNode.h; sourceTree = "<group>"; };
 		20D7F2462022124200C2B8D0 /* CTBundleNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTBundleNode.m; sourceTree = "<group>"; };
+		F5D23D90202C0D4D0015F9A6 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		F5E40B8A201F1FA400F49EE2 /* CTBundleManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTBundleManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E40B8D201F1FA400F49EE2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F5E40B8E201F1FA400F49EE2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 				F5E40B91201F1FA400F49EE2 /* ViewController.m */,
 				F5E40B93201F1FA400F49EE2 /* Assets.xcassets */,
 				F5E40B95201F1FA400F49EE2 /* Main.storyboard */,
+				F5D23D90202C0D4D0015F9A6 /* appicon.png */,
 				F5E40B98201F1FA400F49EE2 /* Info.plist */,
 				F5E40B99201F1FA400F49EE2 /* main.m */,
 				F5E40B9B201F1FA400F49EE2 /* CTBundleManager.entitlements */,
@@ -420,7 +422,6 @@
 		F5E40B9F201F1FA400F49EE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application: Xiecheng Tourism Network Technology (Shanghai) Co., Ltd. (F63YXXUDZP)";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -437,7 +438,6 @@
 		F5E40BA0201F1FA400F49EE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application: Xiecheng Tourism Network Technology (Shanghai) Co., Ltd. (F63YXXUDZP)";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;

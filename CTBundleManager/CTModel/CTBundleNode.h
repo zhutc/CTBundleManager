@@ -11,6 +11,7 @@
 @interface CTBundleNode : CTNode
 @property(nonatomic , copy) NSString* SourceCodeLocalPath;
 @property(nonatomic , copy) NSString* RemoteCodePath;
+@property(nonatomic , assign) BOOL hasResouceBundle;
 @property(nonatomic , assign) BOOL isLib;
 @property(nonatomic , assign) BOOL disable;
 @property(nonatomic , strong) NSArray* dependency;
