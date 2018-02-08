@@ -8,8 +8,6 @@
 	<string>CtripBuildTool</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIconFile</key>
-	<string>appicon.png</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.ctrip.inner.ios.bundlermanager</string>
 	<key>CFBundleInfoDictionaryVersion</key>

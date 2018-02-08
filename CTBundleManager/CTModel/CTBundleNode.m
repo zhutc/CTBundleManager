@@ -17,7 +17,7 @@
     [aCoder encodeObject:self.dependency forKey:@"dependency"];
     [aCoder encodeBool:self.isLib forKey:@"isLib"];
     [aCoder encodeBool:self.disable forKey:@"disable"];
-    [aCoder encodeBool:self.disable forKey:@"hasResouceBundle"];
+    [aCoder encodeBool:self.hasResouceBundle forKey:@"hasResouceBundle"];
     
 }
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
