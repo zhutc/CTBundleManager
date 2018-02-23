@@ -191,6 +191,12 @@
 /** 不存在创建lock file */
 -(BOOL)createCtripJSONLockFile{
     NSError* error = nil;
+
+    if([self hasCtripJSONLockFile]){
+        [[NSFileManager defaultManager] removeItemAtPath:self.ctripJsonLockPath
+                                                   error:&error];
+    }
+    
     BOOL result = [[NSFileManager defaultManager] copyItemAtPath:self.ctripJsonPath
                                                           toPath:self.ctripJsonLockPath
                                                            error:&error];
