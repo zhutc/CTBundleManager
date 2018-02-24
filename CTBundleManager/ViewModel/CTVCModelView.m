@@ -47,7 +47,6 @@
     
     self.ctripJsonPath = [self.rootPath stringByAppendingPathComponent:ctripSpecDic[@"CtripJSONPath"]];
     self.xcodeprojPath = [self.rootPath stringByAppendingPathComponent:ctripSpecDic[@"xcodeproj"]];
-    self.descriptionPath = [self.rootPath stringByAppendingPathComponent:ctripSpecDic[@"DescriptionPath"]];
     
     NSString* ctripJsonContent = [[NSString alloc] initWithContentsOfFile:self.ctripJsonPath
                                                                  encoding:NSUTF8StringEncoding
@@ -79,16 +78,36 @@
     [self configNode];
 }
 
+-(NSDictionary *)descriptionContentByCtripJSONLockDic:(NSDictionary *)ctripJSONLockDic
+{
+    NSMutableDictionary* descriptionDic = [NSMutableDictionary dictionary];
+    
+    for (NSString* key in ctripJSONLockDic.allKeys) {
+        NSDictionary* value = ctripJSONLockDic[key];
+        if (![value isKindOfClass:[NSDictionary class]]) {
+            continue;
+        }
+        NSString* ownerKey = value[@"owner"];
+        NSMutableArray* array = descriptionDic[ownerKey];
+        if(!array){
+            descriptionDic[ownerKey] = [NSMutableArray array];
+            array = descriptionDic[ownerKey];
+        }
+        NSString* buName = key;
+        if (![array containsObject:buName]) {
+            [array addObject:buName];
+        }
+    }
+    
+    return descriptionDic;
+}
+
 -(void)configNode{
     NSString* ctripJSONLockContent = [[NSString alloc] initWithContentsOfFile:self.ctripJsonLockPath
                                                                      encoding:NSUTF8StringEncoding
                                                                         error:nil];
-    NSString* ctripDescriptionCotent = [[NSString alloc] initWithContentsOfFile:self.descriptionPath
-                                                                       encoding:NSUTF8StringEncoding
-                                                                          error:nil];
-    
     NSDictionary* ctripJSONLockDic = [ctripJSONLockContent toDictionary:nil]; /** json */
-    NSDictionary* ctripDescriptionDic = [ctripDescriptionCotent toDictionary:nil];/** 用来UI分组 */
+    NSDictionary* ctripDescriptionDic = [self descriptionContentByCtripJSONLockDic:ctripJSONLockDic];/** 用来UI分组 */
     
     NSMutableArray* allNodes = [NSMutableArray array];
     

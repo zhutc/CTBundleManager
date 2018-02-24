@@ -32,7 +32,6 @@ typedef NS_ENUM(NSUInteger, CTBundleManagerStatus) {
 @property (nonatomic , copy) NSString* ctripJsonPath;
 @property (nonatomic , copy) NSString* ctripJsonLockPath;/** 生成一个json.lock */
 @property (nonatomic , copy) NSString* xcodeprojPath;
-@property (nonatomic , copy) NSString* descriptionPath;
 @property (nonatomic , copy) NSString* appVersion;
 
 -(void)readArguments:(NSString* )specPath;

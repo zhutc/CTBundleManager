@@ -14,6 +14,7 @@
     [super encodeWithCoder:aCoder];
     [aCoder encodeObject:self.RemoteCodePath forKey:@"RemoteCodePath"];
     [aCoder encodeObject:self.SourceCodeLocalPath forKey:@"SourceCodeLocalPath"];
+    [aCoder encodeObject:self.owner forKey:@"owner"];
     [aCoder encodeObject:self.dependency forKey:@"dependency"];
     [aCoder encodeBool:self.isLib forKey:@"isLib"];
     [aCoder encodeBool:self.disable forKey:@"disable"];
@@ -27,6 +28,7 @@
         self.hasResouceBundle = [aDecoder decodeBoolForKey:@"hasResouceBundle"];
         self.isLib = [aDecoder decodeBoolForKey:@"isLib"];
         self.disable = [aDecoder decodeBoolForKey:@"disable"];
+        self.owner = [aDecoder decodeObjectForKey:@"owner"];
         self.RemoteCodePath = [aDecoder decodeObjectForKey:@"RemoteCodePath"];
         self.SourceCodeLocalPath = [aDecoder decodeObjectForKey:@"SourceCodeLocalPath"];
         self.dependency = [aDecoder decodeObjectForKey:@"dependency"];
@@ -48,6 +50,7 @@
              @"isLib":@(self.isLib),
              @"disable":@(self.disable),
              @"RemoteCodePath":self.RemoteCodePath,
+             @"owner":self.owner,
              @"SourceCodeLocalPath":self.SourceCodeLocalPath,
              @"dependency":self.dependency,
              };
