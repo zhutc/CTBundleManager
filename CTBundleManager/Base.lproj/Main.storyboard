@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.12"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -686,7 +685,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="CtripBuildTool" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="CtripBuildTool" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -778,7 +777,7 @@
                                 <rect key="frame" x="30" y="40" width="663" height="39"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qiP-WM-HXf">
-                                        <rect key="frame" x="403" y="2" width="203" height="32"/>
+                                        <rect key="frame" x="313" y="2" width="203" height="32"/>
                                         <buttonCell key="cell" type="push" title="更新最新Bundle和工程配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aa4-ij-iN6">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -788,7 +787,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ozh-DF-feg">
-                                        <rect key="frame" x="222" y="2" width="133" height="32"/>
+                                        <rect key="frame" x="162" y="2" width="133" height="32"/>
                                         <buttonCell key="cell" type="push" title="仅更新工程配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o6x-dQ-m5l">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -798,7 +797,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Cj-gR-epi">
-                                        <rect key="frame" x="54" y="2" width="120" height="32"/>
+                                        <rect key="frame" x="24" y="2" width="120" height="32"/>
                                         <buttonCell key="cell" type="push" title="还原工程配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RgW-d0-Pye">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -807,14 +806,27 @@
                                             <action selector="clearAction:" target="XfG-lQ-9wD" id="xPx-LS-fMV"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1iq-bN-btS">
+                                        <rect key="frame" x="534" y="2" width="149" height="32"/>
+                                        <buttonCell key="cell" type="push" title="更新RC&amp;工程配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aP6-0o-YQq">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="installRCAction:" target="XfG-lQ-9wD" id="m4q-8F-y61"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Ozh-DF-feg" firstAttribute="leading" secondItem="6Cj-gR-epi" secondAttribute="trailing" constant="60" id="DUe-T2-xcS"/>
+                                    <constraint firstItem="Ozh-DF-feg" firstAttribute="leading" secondItem="6Cj-gR-epi" secondAttribute="trailing" constant="30" id="DUe-T2-xcS"/>
                                     <constraint firstItem="Ozh-DF-feg" firstAttribute="centerY" secondItem="vaL-bc-utJ" secondAttribute="centerY" id="HLm-CD-BKE"/>
+                                    <constraint firstItem="qiP-WM-HXf" firstAttribute="centerY" secondItem="vaL-bc-utJ" secondAttribute="centerY" id="KJ6-lG-Ph8"/>
                                     <constraint firstItem="Ozh-DF-feg" firstAttribute="centerY" secondItem="6Cj-gR-epi" secondAttribute="centerY" id="L9t-K4-dye"/>
-                                    <constraint firstItem="qiP-WM-HXf" firstAttribute="leading" secondItem="Ozh-DF-feg" secondAttribute="trailing" constant="60" id="PVT-uH-i9R"/>
+                                    <constraint firstItem="1iq-bN-btS" firstAttribute="centerY" secondItem="vaL-bc-utJ" secondAttribute="centerY" id="LwP-kr-PKe"/>
+                                    <constraint firstItem="1iq-bN-btS" firstAttribute="leading" secondItem="qiP-WM-HXf" secondAttribute="trailing" constant="30" id="OJD-wA-yka"/>
+                                    <constraint firstItem="qiP-WM-HXf" firstAttribute="leading" secondItem="Ozh-DF-feg" secondAttribute="trailing" constant="30" id="PVT-uH-i9R"/>
                                     <constraint firstItem="qiP-WM-HXf" firstAttribute="centerY" secondItem="vaL-bc-utJ" secondAttribute="centerY" id="PeQ-7A-bwq"/>
-                                    <constraint firstItem="6Cj-gR-epi" firstAttribute="leading" secondItem="vaL-bc-utJ" secondAttribute="leading" constant="60" id="yzr-Yx-khU"/>
+                                    <constraint firstItem="6Cj-gR-epi" firstAttribute="leading" secondItem="vaL-bc-utJ" secondAttribute="leading" constant="30" id="yzr-Yx-khU"/>
                                 </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XUT-Gk-5cg">

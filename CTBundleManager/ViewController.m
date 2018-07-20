@@ -33,6 +33,7 @@
 
 @property (nonatomic , strong) CTLogPanel* tmpLogPanel;
 @property (nonatomic , strong) CTSpecPanel* tmpSpecPanel;
+@property (nonatomic , assign) BOOL isRC;
 
 @end
 
@@ -73,6 +74,12 @@
 
 - (IBAction)helpAction:(id)sender {
     [self showHelpAlert];
+}
+
+- (IBAction)installRCAction:(id)sender {
+    self.isRC = YES;
+    [self buildTaskWithUpdate:YES];
+    self.isRC = NO;
 }
 
 - (IBAction)addSpecAction:(id)sender
@@ -129,7 +136,8 @@
         NSString* specPath = [bundlePath stringByAppendingPathComponent:@"../../../ctrip.spec"];
         NSString* absolutPath = specPath.stringByStandardizingPath;
         if (absolutPath && [[NSFileManager defaultManager] fileExistsAtPath:absolutPath]) {
-            [CTSettingCache setObject:absolutPath forKey:kCtripSpecKey];
+//可能存在多App,取消cache
+//            [CTSettingCache setObject:absolutPath forKey:kCtripSpecKey];
             self.settingModel.ctripSpecPath = absolutPath;
         }
     }
@@ -147,7 +155,11 @@
         self.settingModel = [[CTSettingModel alloc] init];
         self.settingModel.python = python;
         self.settingModel.ctripSpecPath = [CTSettingCache objectForKey:kCtripSpecKey];
+        if ([self hasNoSpec] || ![[NSFileManager defaultManager] fileExistsAtPath:self.settingModel.ctripSpecPath]) {
+            self.settingModel.ctripSpecPath = nil;
+        }
         [self fetchSpecFromScript];
+
     };
     
     if (nil == python || 0 == python.length) {
@@ -206,6 +218,10 @@
     if (NO == update) {
         [arguments addObject:@"-n"];
         [arguments addObject:@"t"];
+    }
+    if (self.isRC) {
+        [arguments addObject:@"-u"];
+        [arguments addObject:@"rc"];
     }
     [self.tmpLogPanel start];
     [CTTask installTaskWithLaunchPath:@"/usr/bin/python"
