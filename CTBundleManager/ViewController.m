@@ -27,6 +27,10 @@
 @property (weak) IBOutlet CTDropOutlineView *sourceCodeDropView;
 @property (weak) IBOutlet NSTextField* workspaceTextField;
 @property (weak) IBOutlet NSTextField* branchTextField;
+@property (weak) IBOutlet NSButton *sourceCodeButton;
+@property (weak) IBOutlet NSButton *debugButton;
+
+
 
 @property (nonatomic , strong) CTVCModelView* manager;//VM
 @property (nonatomic , strong) CTSettingModel* settingModel;
@@ -81,6 +85,21 @@
     [self buildTaskWithUpdate:YES];
     self.isRC = NO;
 }
+- (IBAction)souceCodeClick:(NSButton *)sender {
+    self.manager.allBaseIsSource = sender.state == 1;
+    [self.manager saveCtripJSONLockFile];
+    if (sender.state) {
+        [self.manager configNode];
+        [self.excludeDropView updateDataArray:self.manager.excludeArray];
+        [self.bundleDropView updateDataArray:self.manager.bundleArray];
+        [self.sourceCodeDropView updateDataArray:self.manager.sourceArray];
+    }
+}
+
+- (IBAction)debugClick:(NSButton *)sender {
+    self.manager.debug = sender.state == 1;
+}
+
 
 - (IBAction)addSpecAction:(id)sender
 {
@@ -194,6 +213,8 @@
     [self.excludeDropView updateDataArray:self.manager.excludeArray];
     [self.bundleDropView updateDataArray:self.manager.bundleArray];
     [self.sourceCodeDropView updateDataArray:self.manager.sourceArray];
+    self.sourceCodeButton.state = self.manager.allBaseIsSource ? 1 : 0;
+    self.debugButton.state = self.manager.debug ? 1 : 0;
 }
 
 

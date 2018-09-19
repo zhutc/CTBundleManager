@@ -706,15 +706,15 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" misplaced="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="723" height="705"/>
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="731" height="780"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="8GN-Fc-NyA">
-                                <rect key="frame" x="30" y="99" width="663" height="529"/>
+                                <rect key="frame" x="30" y="129" width="671" height="529"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="zcr-zb-1tX">
-                                        <rect key="frame" x="15" y="15" width="633" height="499"/>
+                                        <rect key="frame" x="15" y="15" width="641" height="499"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="9dr-R0-9SU" customClass="CTDropOutlineView">
                                                 <rect key="frame" x="80" y="10" width="200" height="439"/>
@@ -726,7 +726,7 @@
                                                 </connections>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="pqd-0V-ArU" customClass="CTDropOutlineView">
-                                                <rect key="frame" x="353" y="10" width="200" height="439"/>
+                                                <rect key="frame" x="361" y="10" width="200" height="439"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="BEi-fq-fNq"/>
                                                 </constraints>
@@ -746,7 +746,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P49-xR-syW">
-                                                <rect key="frame" x="351" y="463" width="58" height="17"/>
+                                                <rect key="frame" x="359" y="463" width="58" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="Gwb-Vg-XiP"/>
                                                 </constraints>
@@ -780,10 +780,10 @@
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="vaL-bc-utJ">
-                                <rect key="frame" x="30" y="40" width="663" height="39"/>
+                                <rect key="frame" x="30" y="20" width="671" height="89"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qiP-WM-HXf">
-                                        <rect key="frame" x="283" y="2" width="203" height="32"/>
+                                        <rect key="frame" x="283" y="27" width="203" height="32"/>
                                         <buttonCell key="cell" type="push" title="更新最新Bundle和工程配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aa4-ij-iN6">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -793,7 +793,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ozh-DF-feg">
-                                        <rect key="frame" x="142" y="2" width="133" height="32"/>
+                                        <rect key="frame" x="142" y="27" width="133" height="32"/>
                                         <buttonCell key="cell" type="push" title="仅更新工程配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o6x-dQ-m5l">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -803,7 +803,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Cj-gR-epi">
-                                        <rect key="frame" x="14" y="2" width="120" height="32"/>
+                                        <rect key="frame" x="14" y="27" width="120" height="32"/>
                                         <buttonCell key="cell" type="push" title="还原工程配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RgW-d0-Pye">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -813,7 +813,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1iq-bN-btS">
-                                        <rect key="frame" x="494" y="2" width="149" height="32"/>
+                                        <rect key="frame" x="494" y="27" width="149" height="32"/>
                                         <buttonCell key="cell" type="push" title="更新RC&amp;工程配置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aP6-0o-YQq">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -836,7 +836,7 @@
                                 </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XUT-Gk-5cg">
-                                <rect key="frame" x="28" y="667" width="630" height="19"/>
+                                <rect key="frame" x="28" y="747" width="638" height="19"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="工作目录 ：" id="gR5-Fl-dGn">
                                     <font key="font" size="15" name=".PingFangSC-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -844,7 +844,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YC9-FV-P0E">
-                                <rect key="frame" x="680" y="663" width="25" height="25"/>
+                                <rect key="frame" x="688" y="743" width="25" height="25"/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A2M-ex-ZOj">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -854,45 +854,82 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XIj-Kb-b8j">
-                                <rect key="frame" x="28" y="638" width="630" height="19"/>
+                                <rect key="frame" x="28" y="718" width="638" height="19"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="当前分支 : " id="Qio-8G-SIP">
                                     <font key="font" size="15" name=".PingFangSC-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="aoz-YK-H9S">
+                                <rect key="frame" x="30" y="668" width="671" height="40"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Huo-KS-sP7">
+                                        <rect key="frame" x="-2" y="11" width="164" height="19"/>
+                                        <buttonCell key="cell" type="check" title="中文Bundle全切源码" bezelStyle="regularSquare" imagePosition="left" inset="2" id="VGP-Rt-arB">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" size="15" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="souceCodeClick:" target="XfG-lQ-9wD" id="evh-VN-qgy"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bQa-4I-f7Z">
+                                        <rect key="frame" x="178" y="11" width="239" height="19"/>
+                                        <buttonCell key="cell" type="check" title="中文全切debug bundle version" bezelStyle="regularSquare" imagePosition="left" inset="2" id="8cO-1e-ahA">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" size="15" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="debugClick:" target="XfG-lQ-9wD" id="LnF-Wj-cWC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1QK-vq-mQD"/>
+                                    <constraint firstItem="bQa-4I-f7Z" firstAttribute="centerY" secondItem="aoz-YK-H9S" secondAttribute="centerY" id="A5o-eq-ADl"/>
+                                    <constraint firstItem="bQa-4I-f7Z" firstAttribute="leading" secondItem="Huo-KS-sP7" secondAttribute="trailing" constant="20" id="TOo-I3-kqe"/>
+                                    <constraint firstItem="Huo-KS-sP7" firstAttribute="leading" secondItem="aoz-YK-H9S" secondAttribute="leading" id="ozL-TG-PDe"/>
+                                    <constraint firstItem="Huo-KS-sP7" firstAttribute="centerY" secondItem="aoz-YK-H9S" secondAttribute="centerY" id="qku-4h-eNB"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="XUT-Gk-5cg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="12A-9A-9Ks"/>
+                            <constraint firstItem="XUT-Gk-5cg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="14" id="12A-9A-9Ks"/>
                             <constraint firstAttribute="trailing" secondItem="YC9-FV-P0E" secondAttribute="trailing" constant="20" id="AHX-gx-0tL"/>
                             <constraint firstItem="XIj-Kb-b8j" firstAttribute="leading" secondItem="XUT-Gk-5cg" secondAttribute="leading" id="BFf-7J-NoS"/>
+                            <constraint firstItem="8GN-Fc-NyA" firstAttribute="trailing" secondItem="aoz-YK-H9S" secondAttribute="trailing" id="DgE-Cw-sXf"/>
                             <constraint firstItem="YC9-FV-P0E" firstAttribute="centerY" secondItem="XUT-Gk-5cg" secondAttribute="centerY" id="EOP-7m-sdb"/>
                             <constraint firstItem="YC9-FV-P0E" firstAttribute="leading" secondItem="XUT-Gk-5cg" secondAttribute="trailing" constant="26" id="GkD-SH-Smd"/>
                             <constraint firstItem="8GN-Fc-NyA" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="HGQ-Op-jKw"/>
-                            <constraint firstItem="8GN-Fc-NyA" firstAttribute="top" secondItem="XIj-Kb-b8j" secondAttribute="bottom" constant="10" id="L84-zL-bKK"/>
+                            <constraint firstItem="8GN-Fc-NyA" firstAttribute="leading" secondItem="aoz-YK-H9S" secondAttribute="leading" id="POI-1o-J5C"/>
                             <constraint firstItem="vaL-bc-utJ" firstAttribute="trailing" secondItem="8GN-Fc-NyA" secondAttribute="trailing" id="RNE-WU-kjF"/>
                             <constraint firstItem="vaL-bc-utJ" firstAttribute="leading" secondItem="8GN-Fc-NyA" secondAttribute="leading" id="RvD-G3-ITk"/>
                             <constraint firstAttribute="trailing" secondItem="8GN-Fc-NyA" secondAttribute="trailing" constant="30" id="TS9-sv-whI"/>
                             <constraint firstItem="XUT-Gk-5cg" firstAttribute="leading" secondItem="8GN-Fc-NyA" secondAttribute="leading" id="XbA-Yv-syI"/>
-                            <constraint firstAttribute="bottom" secondItem="vaL-bc-utJ" secondAttribute="bottom" constant="40" id="eZB-Wa-d7W"/>
+                            <constraint firstItem="aoz-YK-H9S" firstAttribute="top" secondItem="XIj-Kb-b8j" secondAttribute="bottom" constant="10" id="aT3-le-nOF"/>
+                            <constraint firstAttribute="bottom" secondItem="vaL-bc-utJ" secondAttribute="bottom" constant="20" id="eZB-Wa-d7W"/>
                             <constraint firstItem="XIj-Kb-b8j" firstAttribute="top" secondItem="XUT-Gk-5cg" secondAttribute="bottom" constant="10" id="fRz-gW-J3y"/>
                             <constraint firstItem="vaL-bc-utJ" firstAttribute="top" secondItem="8GN-Fc-NyA" secondAttribute="bottom" constant="20" id="pxI-gO-iqf"/>
-                            <constraint firstItem="8GN-Fc-NyA" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" multiplier="3:4" id="vqB-sS-96p"/>
+                            <constraint firstItem="8GN-Fc-NyA" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" multiplier="3:4" constant="-56" id="vqB-sS-96p"/>
+                            <constraint firstItem="8GN-Fc-NyA" firstAttribute="top" secondItem="aoz-YK-H9S" secondAttribute="bottom" constant="10" id="z2w-jf-7jV"/>
                             <constraint firstItem="XIj-Kb-b8j" firstAttribute="trailing" secondItem="XUT-Gk-5cg" secondAttribute="trailing" id="znI-8U-Z5e"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="branchTextField" destination="XIj-Kb-b8j" id="vlV-k1-gdh"/>
                         <outlet property="bundleDropView" destination="9dr-R0-9SU" id="rRD-eI-hfj"/>
+                        <outlet property="debugButton" destination="bQa-4I-f7Z" id="awG-oK-BT6"/>
                         <outlet property="mainBackgroundView" destination="8GN-Fc-NyA" id="ivf-fu-3hF"/>
                         <outlet property="mainDrapBackgroundView" destination="zcr-zb-1tX" id="NMJ-Xw-bea"/>
+                        <outlet property="sourceCodeButton" destination="Huo-KS-sP7" id="ew3-uc-s7w"/>
                         <outlet property="sourceCodeDropView" destination="pqd-0V-ArU" id="bXG-3o-BVL"/>
                         <outlet property="workspaceTextField" destination="XUT-Gk-5cg" id="wDT-Ra-8Ux"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="99.5" y="921.5"/>
+            <point key="canvasLocation" x="103.5" y="959"/>
         </scene>
     </scenes>
 </document>

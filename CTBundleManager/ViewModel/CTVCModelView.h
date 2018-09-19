@@ -23,6 +23,7 @@ typedef NS_ENUM(NSUInteger, CTBundleManagerStatus) {
   CtripJSON中的字段
  */
 @property(nonatomic , assign) BOOL allBaseIsSource;
+@property(nonatomic , assign) BOOL debug;
 @property(nonatomic , strong) NSMutableDictionary* extensionOtherFields; /** extension 扩展的字段 */
 
 @property(nonatomic , strong) NSMutableArray* excludeArray;/** 不参与编译 */
@@ -44,4 +45,5 @@ typedef NS_ENUM(NSUInteger, CTBundleManagerStatus) {
 
 -(void)saveCtripJSONLockFile;
 - (BOOL)acceptDrag:(id)node;
+-(void)configNode;/** 刷新分组 */
 @end

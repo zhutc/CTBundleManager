@@ -145,11 +145,14 @@
                 /** 存起来其他扩展字段 */
                 for (NSString* key in dic.allKeys) {
                     if (![key isEqualToString:@"AllBaseIsSource"] &&
-                        ![key isEqualToString:@"BaseBundle"]) {
+                        ![key isEqualToString:@"BaseBundle"] &&
+                        ![key isEqualToString:@"Debug"]
+                        ) {
                         [self.extensionOtherFields setObject:dic[key] forKey:key];
                     }
                 }
                 self.allBaseIsSource = [dic[@"AllBaseIsSource"] boolValue]; //该字段暂时不配置
+                self.debug = YES; /** 工具配死debug */ //[dic[@"Debug"] boolValue];
                 NSDictionary* BaseBundle = dic[@"BaseBundle"];
             
                 for (NSString* k in BaseBundle.allKeys) { /**  */
@@ -184,6 +187,10 @@
         }
     }
     
+    [self.excludeArray removeAllObjects];
+    [self.bundleArray removeAllObjects];
+    [self.sourceArray removeAllObjects];
+
     [self.excludeArray addObjectsFromArray:[self dealArray:excludeAllArray ctripDescriptionDic:ctripDescriptionDic]];
     [self.bundleArray addObjectsFromArray:[self dealArray:bundleAllArray ctripDescriptionDic:ctripDescriptionDic]];
     [self.sourceArray addObjectsFromArray:[self dealArray:sourceAllArray ctripDescriptionDic:ctripDescriptionDic]];
@@ -235,6 +242,7 @@
     NSMutableDictionary* extension = [NSMutableDictionary dictionary];
     [extension addEntriesFromDictionary:self.extensionOtherFields];
     [extension setObject:[NSNumber numberWithBool:self.allBaseIsSource] forKey:@"AllBaseIsSource"];
+    [extension setObject:[NSNumber numberWithBool:self.debug] forKey:@"Debug"];
     NSMutableDictionary* baseBundles = [NSMutableDictionary dictionary];
     [extension setObject:baseBundles forKey:@"BaseBundle"];
     [contentDictionary setObject:extension forKey:@"Extension"];

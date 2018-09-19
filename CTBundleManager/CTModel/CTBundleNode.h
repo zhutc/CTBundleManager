@@ -17,9 +17,10 @@
 @property(nonatomic , assign) BOOL isLib;
 @property(nonatomic , assign) BOOL disable;
 @property(nonatomic , strong) NSArray* dependency;
-@property(nonatomic , copy) NSString* bundleVersion;
-@property(nonatomic , copy) NSString* commitId;
-
+@property(nonatomic , copy) NSString* releaseBundleVersion;
+@property(nonatomic , copy) NSString* debugBundleVersion;
+@property(nonatomic , copy) NSString* releaseCommitId;
+@property(nonatomic , copy) NSString* debugCommitId;
 -(instancetype)initWithDictionary:(NSDictionary*)dic;
 -(NSDictionary *)toDictionary;
 @end

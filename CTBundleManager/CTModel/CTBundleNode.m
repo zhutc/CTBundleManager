@@ -19,9 +19,11 @@
     [aCoder encodeBool:self.isLib forKey:@"isLib"];
     [aCoder encodeBool:self.disable forKey:@"disable"];
     [aCoder encodeBool:self.hasResouceBundle forKey:@"hasResouceBundle"];
-    [aCoder encodeObject:self.bundleVersion forKey:@"bundleVersion"];
-    [aCoder encodeObject:self.commitId forKey:@"commitId"];
     [aCoder encodeBool:self.isExtension forKey:@"isExtension"];
+    [aCoder encodeObject:self.releaseBundleVersion forKey:@"releaseBundleVersion"];
+    [aCoder encodeObject:self.debugBundleVersion forKey:@"debugBundleVersion"];
+    [aCoder encodeObject:self.releaseCommitId forKey:@"releaseCommitId"];
+    [aCoder encodeObject:self.debugCommitId forKey:@"debugCommitId"];
 
 }
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -35,9 +37,11 @@
         self.remoteCodePath = [aDecoder decodeObjectForKey:@"remoteCodePath"];
         self.sourceCodeLocalPath = [aDecoder decodeObjectForKey:@"sourceCodeLocalPath"];
         self.dependency = [aDecoder decodeObjectForKey:@"dependency"];
-        self.bundleVersion = [aDecoder decodeObjectForKey:@"bundleVersion"];
-        self.commitId = [aDecoder decodeObjectForKey:@"commitId"];
         self.isExtension = [aDecoder decodeBoolForKey:@"isExtension"];
+        self.releaseBundleVersion = [aDecoder decodeObjectForKey:@"releaseBundleVersion"];
+        self.debugBundleVersion = [aDecoder decodeObjectForKey:@"debugBundleVersion"];
+        self.releaseCommitId = [aDecoder decodeObjectForKey:@"releaseCommitId"];
+        self.debugCommitId = [aDecoder decodeObjectForKey:@"debugCommitId"];
     }
     return self;
 }
@@ -62,8 +66,10 @@
                                                                                }];
     if (self.isExtension) {
         [dic addEntriesFromDictionary:@{
-                                        @"bundleVersion":self.bundleVersion,
-                                        @"commitId":self.commitId
+                                        @"releaseCommitId":self.releaseCommitId,
+                                        @"debugCommitId":self.debugCommitId,
+                                        @"releaseBundleVersion":self.releaseBundleVersion,
+                                        @"debugBundleVersion":self.debugBundleVersion,
                                         }];
     }
     
