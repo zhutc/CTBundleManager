@@ -8,6 +8,21 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol  CTDropOutlineViewDelegate <NSObject>
+
+-(BOOL)acceptDrag:(id)node;
+
+@end
+
 @interface CTDropOutlineView : NSView
+@property(nonatomic , weak) IBOutlet id<CTDropOutlineViewDelegate> delegate;
 -(void)updateDataArray:(NSMutableArray*)array;
 @end
+
+
+
+
+
+
+
+

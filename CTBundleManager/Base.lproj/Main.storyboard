@@ -702,7 +702,7 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Delegate-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
@@ -721,12 +721,18 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="aPY-En-Kps"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="QTw-Us-hyh"/>
+                                                </connections>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="pqd-0V-ArU" customClass="CTDropOutlineView">
                                                 <rect key="frame" x="353" y="10" width="200" height="439"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="BEi-fq-fNq"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="A5p-yZ-iyM"/>
+                                                </connections>
                                             </customView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZgO-Tv-JLb">
                                                 <rect key="frame" x="78" y="463" width="73" height="17"/>

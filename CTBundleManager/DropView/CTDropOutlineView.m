@@ -158,15 +158,22 @@ static CTNode* currentParent;
 //接受拖动
 - (BOOL)outlineView:(NSOutlineView *)outlineView acceptDrop:(id<NSDraggingInfo>)info item:(CTNode *)item childIndex:(NSInteger)index
 {
+    
     if ([self isEqual:currentDropOutlineView] || (0 == item.childrens.count && item)) {
         currentParent = nil;
         currentDropOutlineView = nil;
         return NO;
     }
-
+    
+    
+    
     NSPasteboard* pasteboard = info.draggingPasteboard;
     NSData* data = [pasteboard dataForType:self.passtedboardType];
     CTNode* acceptNode = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    if ([self.delegate respondsToSelector:@selector(acceptDrag:)] && [self.delegate acceptDrag:acceptNode] == NO) {
+        return NO;
+    }
     
     if (acceptNode && item) {
         if (currentParent == nil && ![acceptNode.name isEqualToString:item.name]) {

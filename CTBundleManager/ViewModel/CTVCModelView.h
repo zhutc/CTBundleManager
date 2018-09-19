@@ -19,6 +19,12 @@ typedef NS_ENUM(NSUInteger, CTBundleManagerStatus) {
 
 @interface CTVCModelView : NSObject
 
+/**
+  CtripJSON中的字段
+ */
+@property(nonatomic , assign) BOOL allBaseIsSource;
+@property(nonatomic , strong) NSMutableDictionary* extensionOtherFields; /** extension 扩展的字段 */
+
 @property(nonatomic , strong) NSMutableArray* excludeArray;/** 不参与编译 */
 @property(nonatomic , strong) NSMutableArray* bundleArray;/** Bundle编译 */
 @property(nonatomic , strong) NSMutableArray* sourceArray;/** 源码编译 */
@@ -37,5 +43,5 @@ typedef NS_ENUM(NSUInteger, CTBundleManagerStatus) {
 -(void)readArguments:(NSString* )specPath;
 
 -(void)saveCtripJSONLockFile;
-
+- (BOOL)acceptDrag:(id)node;
 @end

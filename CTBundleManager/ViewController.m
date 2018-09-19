@@ -18,7 +18,7 @@
 #import "CTSettingPanel.h"
 
 
-@interface ViewController()<NSSearchFieldDelegate , CTSpecPanelProtocol>
+@interface ViewController()<NSSearchFieldDelegate , CTSpecPanelProtocol , CTDropOutlineViewDelegate>
 @property (weak) IBOutlet NSView *mainBackgroundView;
 @property (weak) IBOutlet NSSearchField *searchField;
 @property (weak) IBOutlet NSView *mainDrapBackgroundView;
@@ -320,6 +320,12 @@
             }
         }
     }
+}
+
+
+#pragma mark - Drap delegate
+-(BOOL)acceptDrag:(id)node{
+    return [self.manager acceptDrag:node];
 }
 
 

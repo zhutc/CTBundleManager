@@ -87,6 +87,28 @@
         if (![value isKindOfClass:[NSDictionary class]]) {
             continue;
         }
+        if ([key isEqualToString:@"Extension"]) {
+            NSDictionary* extension = value;
+            NSDictionary* baseBundles = extension[@"BaseBundle"];
+            for (NSString* key in baseBundles.allKeys ) {
+                NSDictionary* value = baseBundles[key];
+                if (![value isKindOfClass:[NSDictionary class]]) {
+                    continue;
+                }
+                NSString* ownerKey = value[@"owner"];
+                NSMutableArray* array = descriptionDic[ownerKey];
+                if(!array){
+                    descriptionDic[ownerKey] = [NSMutableArray array];
+                    array = descriptionDic[ownerKey];
+                }
+                NSString* buName = key;
+                if (![array containsObject:buName]) {
+                    [array addObject:buName];
+                }
+            }
+            continue;
+        }
+        
         NSString* ownerKey = value[@"owner"];
         NSMutableArray* array = descriptionDic[ownerKey];
         if(!array){
@@ -119,6 +141,36 @@
     for (NSString* key in ctripJSONLockDic.allKeys) {
         NSDictionary* dic = ctripJSONLockDic[key];
         if ([dic isKindOfClass:[NSDictionary class]]) {
+            if ([key.lowercaseString isEqualToString:@"extension"]) {
+                /** 存起来其他扩展字段 */
+                for (NSString* key in dic.allKeys) {
+                    if (![key isEqualToString:@"AllBaseIsSource"] &&
+                        ![key isEqualToString:@"BaseBundle"]) {
+                        [self.extensionOtherFields setObject:dic[key] forKey:key];
+                    }
+                }
+                self.allBaseIsSource = [dic[@"AllBaseIsSource"] boolValue]; //该字段暂时不配置
+                NSDictionary* BaseBundle = dic[@"BaseBundle"];
+            
+                for (NSString* k in BaseBundle.allKeys) { /**  */
+                    NSDictionary* d = BaseBundle[k];
+                    if ([d isKindOfClass:[NSDictionary class]]) {
+                        CTBundleNode* node = [[CTBundleNode alloc] initWithDictionary:d];
+                        node.isExtension = YES;
+                        node.name = k;
+                        [allNodes addObject:node];
+                        if (node.disable) {
+                            [excludeAllArray addObject:node];
+                        }else if (self.allBaseIsSource || node.isLib == NO){ /** 全部源码 */
+                            [sourceAllArray addObject:node];
+                        }else{
+                            [bundleAllArray addObject:node];
+                        }
+                    }
+                }
+                continue;
+                
+            }
             CTBundleNode* node = [[CTBundleNode alloc] initWithDictionary:dic];
             node.name = key;
             [allNodes addObject:node];
@@ -180,6 +232,13 @@
 -(void)saveCtripJSONLockFile
 {
     NSMutableDictionary* contentDictionary = [NSMutableDictionary dictionary];;
+    NSMutableDictionary* extension = [NSMutableDictionary dictionary];
+    [extension addEntriesFromDictionary:self.extensionOtherFields];
+    [extension setObject:[NSNumber numberWithBool:self.allBaseIsSource] forKey:@"AllBaseIsSource"];
+    NSMutableDictionary* baseBundles = [NSMutableDictionary dictionary];
+    [extension setObject:baseBundles forKey:@"BaseBundle"];
+    [contentDictionary setObject:extension forKey:@"Extension"];
+
     [contentDictionary setObject:self.appVersion forKey:@"Version"];
     [@[self.excludeArray , self.bundleArray , self.sourceArray] enumerateObjectsUsingBlock:^(NSArray*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj enumerateObjectsUsingBlock:^(CTBundleNode*  _Nonnull root, NSUInteger rootIndex, BOOL * _Nonnull stop) {
@@ -187,7 +246,15 @@
                 node.disable = (idx == 0);
                 node.isLib = (idx == 1);
                 NSDictionary* nodeDic = [node toDictionary];
-                [contentDictionary setObject:nodeDic forKey:node.name];
+                if (node.isExtension) {
+                    if (self.allBaseIsSource) { /** 强制源码 */
+                        node.isLib = NO;
+                    }
+                    [baseBundles setObject:nodeDic forKey:node.name];
+                }else{
+                    [contentDictionary setObject:nodeDic forKey:node.name];
+                }
+                
             }];
         }];
     }];
@@ -265,5 +332,26 @@
 Getter(excludeArray)
 Getter(bundleArray)
 Getter(sourceArray)
+
+-(NSMutableDictionary *)extensionOtherFields
+{
+    if (!_extensionOtherFields) {
+        _extensionOtherFields = [NSMutableDictionary dictionary];
+    }
+    return _extensionOtherFields;
+}
+
+
+- (BOOL)acceptDrag:(CTBundleNode*)node
+{
+    CTBundleNode* n = node;
+    if (node.childrens.count) {
+        n = node.childrens.firstObject;
+    }
+    if (n && [n respondsToSelector:@selector(isExtension)] && n.isExtension && self.allBaseIsSource) {
+        return NO;
+    }
+    return YES;
+}
 
 @end

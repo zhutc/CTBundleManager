@@ -9,13 +9,16 @@
 #import "CTNode.h"
 
 @interface CTBundleNode : CTNode
-@property(nonatomic , copy) NSString* SourceCodeLocalPath;
-@property(nonatomic , copy) NSString* RemoteCodePath;
+@property(nonatomic , assign) BOOL isExtension;
+@property(nonatomic , copy) NSString* sourceCodeLocalPath;
+@property(nonatomic , copy) NSString* remoteCodePath;
 @property(nonatomic , copy) NSString* owner;
 @property(nonatomic , assign) BOOL hasResouceBundle;
 @property(nonatomic , assign) BOOL isLib;
 @property(nonatomic , assign) BOOL disable;
 @property(nonatomic , strong) NSArray* dependency;
+@property(nonatomic , copy) NSString* bundleVersion;
+@property(nonatomic , copy) NSString* commitId;
 
 -(instancetype)initWithDictionary:(NSDictionary*)dic;
 -(NSDictionary *)toDictionary;
